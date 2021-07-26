@@ -7,7 +7,7 @@
 
 ## 概论
 
-![osi-tcpip](images/osi-tcpip.png)
+<img src="images/osi-tcpip.png" style="width: 1000px"/>
 
 ## 物理层
 
