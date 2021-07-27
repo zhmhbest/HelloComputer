@@ -71,11 +71,23 @@ $$Socket = (Host, Port)$$
 
 #### 可靠传输
 
-
+- 超时重传（超时时间根据加权平均往返时间）
+- 冗余ACK重传
 
 #### 流量控制
 
+- 滑动窗口（动态调整窗口大小）
+- 零窗口通知计时器
+
 #### 拥塞控制
+
+- 满开始、拥塞避免
+
+<img src="images/congestion_0.png" style="width: 600px"/>
+
+- 快重传、快恢复
+
+<img src="images/congestion_1.png" style="width: 600px"/>
 
 ## 应用层
 
