@@ -88,9 +88,18 @@ $$Socket = (Host, Port)$$
 
 <img src="images/tcp_establish.gif" style="width: 600px"/>
 
+- $→ SYN=1,seq=x$
+- $← SYN=1,ACK=1,seq=y,ack=x+1$
+- $→ ACK=1,seq=x+1,ack=y+1$
+
 #### 连接释放
 
 <img src="images/tcp_release.gif" style="width: 600px"/>
+
+- $→ FIN=1,seq=u$
+- $← ACK=1,seq=v,ack=u+1$
+- $← FIN=1,ACK=1,seq=w,ack=u+1$
+- $→ ACK=1,seq=u+1,ack=w+1$
 
 #### 可靠传输
 
