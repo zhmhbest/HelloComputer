@@ -55,7 +55,35 @@ ARP协议默认每台主机在向网络中发送应答信号时都使用的是�
 
 ### IP
 
-`pass`
+#### IP数据报
+
+@import "tables/ip_v4_head.html"
+
+#### 分类IP地址
+
+@import "tables/ip_v4.html"
+
+#### 私有IP地址
+
+- A：[10.0.0.0, 10.255.255.255]
+- B：[172.16.0.0, 172.31.255.255]
+- C：[192.168.0.0, 192.168.255.255]
+
+#### 子网划分
+
+@import "tables/subnet.html"
+
+$\textnormal{\footnotesize 网络地址} = \textnormal{\footnotesize IP地址} { \ \& \ } \textnormal{\footnotesize 子网掩码}$
+
+#### CIDR
+
+@import "tables/cidr.html"
+
+记法：IP地址/前缀长度
+
+#### IPV6
+
+@import "tables/ip_v6_head.html"
 
 ### ICMP
 

@@ -3,15 +3,34 @@
     style="text-align: center; border-collapse: collapse; table-layout:fixed; word-break:break-all">
 <tbody>
     <tr>
-        <td colspan=16>源端口</td>
-        <td colspan=16>目的端口</td>
+        <td colspan=4>版本</td>
+        <td colspan=4>首部<br>长度</td>
+        <td colspan=8>区分<br>服务</td>
+        <td colspan=16>总长度</td>
     </tr>
     <tr>
-        <td colspan=16>长度</td>
-        <td colspan=16>校验和</td>
+    <tr>
+        <td colspan=16>标识</td>
+        <td colspan=4>标志</td>
+        <td colspan=12>片偏移</td>
     </tr>
     <tr>
-        <td colspan=32>内容</td>
+        <td colspan=8>生存时间</td>
+        <td colspan=8>协议</td>
+        <td colspan=16>首部校验和</td>
+    </tr>
+    <tr>
+        <td colspan=32>源地址</td>
+    </tr>
+    <tr>
+        <td colspan=32>目的地址</td>
+    </tr>
+    <tr>
+        <td colspan=24>可选字段（长度可变）</td>
+        <td colspan=8>填充</td>
+    </tr>
+    <tr>
+        <td colspan=32>数据部分</td>
     </tr>
     <tr>
         <td width=4 style="padding: 4px"></td>

@@ -3,17 +3,44 @@
     style="text-align: center; border-collapse: collapse; table-layout:fixed; word-break:break-all">
 <tbody>
     <tr>
-        <td colspan=16>源端口</td>
-        <td colspan=16>目的端口</td>
+        <td>A</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>0</td>
+        <td style="padding: 0px; background-color: grey" colspan=7>网络号8b</td>
+        <td colspan=24>主机号24b</td>
     </tr>
     <tr>
-        <td colspan=16>长度</td>
-        <td colspan=16>校验和</td>
+        <td>B</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>0</td>
+        <td style="padding: 0px; background-color: grey" colspan=14>网络号16b</td>
+        <td colspan=16>主机号16b</td>
     </tr>
     <tr>
-        <td colspan=32>内容</td>
+        <td>C</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>0</td>
+        <td style="padding: 0px; background-color: grey" colspan=21>网络号24b</td>
+        <td colspan=8>主机号8b</td>
     </tr>
     <tr>
+        <td>D</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>0</td>
+        <td colspan=28>多播地址</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td style="padding: 0px; background-color: grey" colspan=1>1</td>
+        <td colspan=28>保留</td>
+    </tr>
+    <tr>
+        <td width=1 style="padding: 10px"></td>
         <td width=4 style="padding: 4px"></td>
         <td width=4 style="padding: 4px"></td>
         <td width=4 style="padding: 4px"></td>
