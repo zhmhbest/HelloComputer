@@ -1,5 +1,5 @@
-# HelloComputerNetwork
+# HelloComputer
 
-计算机网络知识点整理
+计算机知识点整理
 
-- [View](https://zhmhbest.github.io/HelloComputerNetwork/)
+- [View](https://zhmhbest.github.io/HelloComputer/)
