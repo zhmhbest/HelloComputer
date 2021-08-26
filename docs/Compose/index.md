@@ -4,3 +4,7 @@
 # [计算机组成原理](../index.html)
 
 [TOC]
+
+## 概论
+
+@import "introduction.md"
