@@ -3,6 +3,8 @@
 
 # [计算机知识点](https://github.com/zhmhbest/HelloComputer)
 
+## [差错校验](./ErrorChecking/index.html)
+
 ## [网络](./Network/index.html)
 
 ## [组成原理](./Compose/index.html)
