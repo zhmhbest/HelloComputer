@@ -35,7 +35,7 @@
 
 ### 存储器性能
 
-$$\textnormal{\footnotesize 存取周期} = \textnormal{\footnotesize 存取时间} + \textnormal{\footnotesize 恢复周期}$$
+$\textnormal{\footnotesize 存取周期} = \textnormal{\footnotesize 存取时间} + \textnormal{\footnotesize 恢复周期}$
 
 ![memory](images/storage/memory.png)
 
