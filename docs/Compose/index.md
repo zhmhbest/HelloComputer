@@ -9,16 +9,24 @@
 
 @import "introduction.md"
 
-## 运算方法和运算器
+## 运算
 
 @import "operation.md"
 
-## 多层次存储器
+## 存储器
+
+@import "storage.md"
 
 ## 指令系统
 
+@import "instruction.md"
+
 ## 中央处理器
 
+@import "cpu.md"
+
 ## 总线系统
+
+@import "bus.md"
 
 ## 外存

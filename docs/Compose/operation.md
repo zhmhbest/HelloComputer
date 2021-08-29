@@ -8,6 +8,7 @@
 
 #### 反码
 
+- 原码直接取反；
 - $0$有两种表示方法，$-0$和$+0$；
 - 表示范围：$[-(2^n-1), (2^n-1)]$。
 
@@ -23,6 +24,29 @@
 - 补码符号位取反；
 - 只能表示整数；
 - 用于比较大小。
+
+### 浮点数表示
+
+科学计数法思想
+
+$$\textnormal{\footnotesize 浮点数} = \{\textnormal{\footnotesize 阶码}, \textnormal{\footnotesize 尾数}\}$$
+
+- 阶码：补码或移码表示的定点整数
+- 尾数：原码或补码表示的定点小数
+
+#### 规格化尾数
+
+尾数的最高数值位必须是一个有效值。可以通过算数左移或算术右移来规格化尾数。
+
+#### IEEE 754标准
+
+$$\textnormal{\footnotesize 浮点数} = \{\textnormal{\footnotesize 数符}, \textnormal{\footnotesize 移码阶码}, \textnormal{\footnotesize 原码尾数}\}$$
+
+|类型| 总位数 | 数符位数 | 阶码位数 | 尾数位数 |
+| -: | :-: | :-: | :-: | :-: |
+| float | 32 | 1 | 8 | 23 |
+| double | 64 | 1 | 11 | 52 |
+| long double | 80 | 1 | 15 | 64 |
 
 ### 定点数的运算
 
