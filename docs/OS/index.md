@@ -12,3 +12,7 @@
 ## 进程
 
 @import "process.md"
+
+## 内存
+
+@import "memory.md"
