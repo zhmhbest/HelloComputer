@@ -16,3 +16,7 @@
 ## 内存
 
 @import "memory.md"
+
+## 文件
+
+@import "file.md"
