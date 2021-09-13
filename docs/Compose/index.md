@@ -28,7 +28,3 @@
 ## 总线系统
 
 @import "bus.md"
-
-## 外存
-
-@import "external_storage.md"
