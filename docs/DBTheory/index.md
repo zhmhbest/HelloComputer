@@ -150,21 +150,31 @@
 
 #### 平凡函数依赖
 
+![functional_dependency_ordinary](images/functional_dependency_ordinary.svg)
+
 $X→Y$且$Y∈X$。$eg:(A, B)→B$。
 
 #### 非平凡的函数依赖
+
+![functional_dependency_non](images/functional_dependency_non.svg)
 
 $X→Y$且$Y∉X$。$eg:(A, B)→C$。
 
 #### 部分函数依赖
 
+![functional_dependency_partial](images/functional_dependency_partial.svg)
+
 $X→Y$但$Y$不完全函数依赖于$X$，记作$X\xrightarrow{P}Y$。
 
 #### 完全函数依赖
 
+![functional_dependency_full](images/functional_dependency_full.svg)
+
 $X→Y$且$X$任何真子集$X'$都有$X'{\nrightarrow}Y$，记作$X\xrightarrow{F}Y$。
 
 #### 传递函数依赖
+
+![functional_dependency_deliver](images/functional_dependency_deliver.svg)
 
 $X→Y(Y∉X)$，$Y{\nrightarrow}X$，$Y→Z(Z∉Y)$，则$X\xrightarrow{传通}Z$。
 
