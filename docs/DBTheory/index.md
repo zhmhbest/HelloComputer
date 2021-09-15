@@ -150,27 +150,28 @@
 
 #### 平凡函数依赖
 
-![functional_dependency_ordinary](images/functional_dependency_ordinary.svg)
+![functional_dependency_xy_y](images/functional_dependency_xy_y.svg)
 
-$X→Y$且$Y∈X$。$eg:(A, B)→B$。
+$(X,Y)→Y$且$Y∈(X,Y)$。
 
 #### 非平凡的函数依赖
 
-![functional_dependency_non](images/functional_dependency_non.svg)
+![functional_dependency_xy_z](images/functional_dependency_xy_z.svg)
 
-$X→Y$且$Y∉X$。$eg:(A, B)→C$。
-
-#### 部分函数依赖
-
-![functional_dependency_partial](images/functional_dependency_partial.svg)
-
-$X→Y$但$Y$不完全函数依赖于$X$，记作$X\xrightarrow{P}Y$。
+$(X,Y)→Z$且$Z∉(X,Y)$。
 
 #### 完全函数依赖
 
-![functional_dependency_full](images/functional_dependency_full.svg)
+![functional_dependency_xy_z](images/functional_dependency_xy_z.svg)
 
-$X→Y$且$X$任何真子集$X'$都有$X'{\nrightarrow}Y$，记作$X\xrightarrow{F}Y$。
+$(X,Y)→Z$且$X{\nrightarrow}Z$、$Y{\nrightarrow}Z$（任何真子集都不能单独推出），记作$(X,Y)\xrightarrow{F}Z$。
+
+#### 部分函数依赖
+
+<img alt="" src="images/functional_dependency_x_z.svg"/>
+<img alt="" src="images/functional_dependency_xy_z.svg"/>
+
+$(X,Y)→Z$但$X→Z$，记作$(X,Y)\xrightarrow{P}Z$。
 
 #### 传递函数依赖
 
