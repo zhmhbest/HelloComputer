@@ -2,7 +2,7 @@ package org.example.LinkedList;
 
 import org.example.EasyAssert;
 
-public class 判断是否为回文链表 {
+public class 是否为回文链表 {
     static boolean isPalindrome(LinkedListNode head) {
         // 使用快慢指针找到后半部分
         LinkedListNode slow = head, fast = head;

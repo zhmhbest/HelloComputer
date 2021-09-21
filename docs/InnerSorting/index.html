@@ -1,0 +1,1186 @@
+<!DOCTYPE html><html><head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+      
+      
+      
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@8.10.2/dist/mermaid.min.js"></script>
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <link rel="stylesheet" href="https://zhmhbest.gitee.io/hellomathematics/style/index.css">
+<script src="https://zhmhbest.gitee.io/hellomathematics/style/index.js"></script>
+<h1 class="mume-header" id="%E5%86%85%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95indexhtml"><a href="../index.html">&#x5185;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</a></h1>
+
+<ul>
+<li><a href="#%E5%86%85%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95indexhtml">&#x5185;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</a>
+<ul>
+<li><a href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">&#x63D2;&#x5165;&#x6392;&#x5E8F;</a>
+<ul>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;</a></li>
+<li><a href="#%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">&#x6298;&#x534A;&#x63D2;&#x5165;&#x6392;&#x5E8F;</a></li>
+<li><a href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">&#x9009;&#x62E9;&#x6392;&#x5E8F;</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;</a></li>
+<li><a href="#%E5%A0%86%E6%8E%92%E5%BA%8F">&#x5806;&#x6392;&#x5E8F;</a>
+<ul>
+<li><a href="#arraytoheap">ArrayToHeap</a></li>
+<li><a href="#heapadjust">HeapAdjust</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F">&#x4EA4;&#x6362;&#x6392;&#x5E8F;</a>
+<ul>
+<li><a href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">&#x5192;&#x6CE1;&#x6392;&#x5E8F;</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</a>
+<ul>
+<li><a href="#arrayadjustr">ArrayAdjustR</a></li>
+<li><a href="#arrayadjustl">ArrayAdjustL</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B8%89%E5%B9%B3%E5%9D%87">&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x4E09;&#x5E73;&#x5747;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">&#x5F52;&#x5E76;&#x6392;&#x5E8F;</a></li>
+<li><a href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F">&#x57FA;&#x6570;&#x6392;&#x5E8F;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">&#x63D2;&#x5165;&#x6392;&#x5E8F;</h2>
+
+<h3 class="mume-header" id="%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;</h3>
+
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x63D2;&#x5165;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/insertion-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/insertion-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/insertion-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/insertion-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>&#x5E8F;&#x5217;&#x5B8C;&#x5168;&#x6B63;&#x5E8F;&#xFF1A;&#x4EC5;&#x9700;&#x6BD4;&#x8F83;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>&#x6B21;</li>
+<li>&#x5E8F;&#x5217;&#x5B8C;&#x5168;&#x9006;&#x5E8F;&#xFF1A;&#x6BD4;&#x8F83;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>2</mn></mrow><mi>n</mi></msubsup><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sum\limits_{i=2}^{n}(i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.329066em;vertical-align:-0.9776689999999999em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3513970000000004em;"><span style="top:-2.122331em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">2</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">&#x2211;</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.9776689999999999em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span></span></span></span>&#x6B21;&#x3001;&#x79FB;&#x52A8;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>2</mn></mrow><mi>n</mi></msubsup><mo stretchy="false">(</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sum\limits_{i=2}^{n}(i+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.329066em;vertical-align:-0.9776689999999999em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3513970000000004em;"><span style="top:-2.122331em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">2</span></span></span></span><span style="top:-3.0000050000000003em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">&#x2211;</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.9776689999999999em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>&#x6B21;</li>
+<li>&#x5E8F;&#x5217;&#x57FA;&#x672C;&#x6709;&#x5E8F;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>&#x9002;&#x5E94;&#x6027;&#xFF1A;&#x968F;&#x7740;&#x6392;&#x5E8F;&#x7684;&#x7684;&#x8FDB;&#x884C;&#xFF0C;&#x5E8F;&#x5217;&#x53D8;&#x5F97;&#x57FA;&#x672C;&#x6709;&#x5E8F;&#xFF0C;&#x7B97;&#x6CD5;&#x6548;&#x7387;&#x9010;&#x6E10;&#x63D0;&#x9AD8;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//! &#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">directInsertSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> v <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> v <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            j<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="txt" class="language-txt">&#x8F93;&#x5165; A, N
+&#x5FAA;&#x73AF; i &#x2208; [1, N - 1]
+    j = i - 1, v = A[i]
+    &#x5FAA;&#x73AF;&#x5F53; j &#x2265; 0 &#x4E14; v &lt; A[j]
+        A[j + 1] = A[j]
+        j--
+    A[j + 1] = v
+</pre><h3 class="mume-header" id="%E6%8A%98%E5%8D%8A%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">&#x6298;&#x534A;&#x63D2;&#x5165;&#x6392;&#x5E8F;</h3>
+
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//! &#x6298;&#x534A;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">binaryInsertSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> m<span class="token punctuation">,</span> r <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> v <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x4E8C;&#x5206;&#x67E5;&#x627E;&#x63A2;&#x6D4B;&#x53F3;&#x8FB9;&#x754C;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;=</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            m <span class="token operator">=</span> <span class="token punctuation">(</span>l <span class="token operator">+</span> r<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                l <span class="token operator">=</span> m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                r <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token comment">// &#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x4E3A;(r+1)</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">&gt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            j<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="txt" class="language-txt">&#x8F93;&#x5165; A, N
+&#x5FAA;&#x73AF; i &#x2208; [1, N-1]
+    l = 0, r = i - 1, v = A[i]
+    &#x5FAA;&#x73AF;&#x5F53; l &#x2264; r
+        m = (l + r) / 2
+        &#x82E5; A[m] &lt;= v &#x5219; l = m + 1 &#x5426;&#x5219; r = m - 1
+    j = i - 1
+    &#x5FAA;&#x73AF;&#x5F53; j &gt; r
+        A[j + 1] = A[j]
+        j--
+    A[j + 1] = v
+</pre><h3 class="mume-header" id="%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</h3>
+
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/shell-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/shell-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/shell-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/shell-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x4E0D;&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x5927;&#x6982;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mfrac><mn>3</mn><mn>2</mn></mfrac></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^{\frac{3}{2}})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20402em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9540200000000001em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8443142857142858em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>&#xFF08;&#x7531;&#x4E8E;&#x6570;&#x5B66;&#x95EE;&#x9898;&#xFF0C;&#x65E0;&#x6CD5;&#x51C6;&#x786E;&#x63CF;&#x8FF0;&#xFF09;</li>
+<li>&#x9002;&#x5E94;&#x6027;&#xFF1A;&#x7531;&#x4E8E;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x57FA;&#x4E8E;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x7EE7;&#x627F;&#x4E86;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x81EA;&#x9002;&#x5E94;&#x6027;&#xFF0C;&#x4F46;&#x9002;&#x5E94;&#x6027;&#x8F83;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x5F31;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//! &#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">shellInsertionSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> step <span class="token operator">=</span> len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> step <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span> step <span class="token operator">/=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> step<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">,</span>
+                k <span class="token operator">=</span> j <span class="token operator">-</span> step<span class="token punctuation">,</span>
+                dump <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token comment">// &#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&gt;</span> dump<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                j <span class="token operator">=</span> k<span class="token punctuation">;</span>
+                k <span class="token operator">=</span> j <span class="token operator">-</span> step<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dump<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">&#x9009;&#x62E9;&#x6392;&#x5E8F;</h2>
+
+<h3 class="mume-header" id="%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">&#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;</h3>
+
+<blockquote>
+<p>&#x5728;&#x4EA4;&#x6362;&#x5355;&#x4F4D;&#x7684;&#x6D88;&#x8017;&#x6210;&#x672C;&#x5F88;&#x9AD8;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#x5F88;&#x53EF;&#x80FD;&#x4E5F;&#x662F;&#x5408;&#x9002;&#x7684;&#x7B97;&#x6CD5;&#x9009;&#x62E9;&#x3002;</p>
+</blockquote>
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x9009;&#x62E9;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/selection-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/selection-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/selection-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/selection-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x4E0D;&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+<li>&#x4E0D;&#x9002;&#x5E94;&#x6027;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//! &#x7B80;&#x5355;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">simpleSelectSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x83B7;&#x53D6;[i, len - 1]&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;</span>
+        <span class="token keyword">int</span> m <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span> m <span class="token operator">=</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">swapValue</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> m<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="txt" class="language-txt">&#x8F93;&#x5165; A, N
+&#x5FAA;&#x73AF; i &#x2208; [0, N - 1]
+    m = i
+    &#x5FAA;&#x73AF; j &#x2208; [i + 1, N - 1]
+        &#x82E5; A[j] &lt; A[m] &#x5219; m = j
+    &#x4EA4;&#x6362; A[i], A[m] &#x7684;&#x503C;
+</pre><h3 class="mume-header" id="%E5%A0%86%E6%8E%92%E5%BA%8F">&#x5806;&#x6392;&#x5E8F;</h3>
+
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x5806;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/heap-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/heap-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/heap-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/heap-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x4E0D;&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>&#x22C5;</mo><msub><mrow><mi>log</mi><mo>&#x2061;</mo></mrow><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \cdot \log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x9002;&#x5E94;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//! &#x6784;&#x5EFA;&#x5927;&#x9876;&#x5806;</span>
+<span class="token keyword">void</span> <span class="token function">heapAdjust</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// i&#x4E3A;&#x88AB;&#x8C03;&#x6574;&#x8282;&#x70B9;</span>
+    <span class="token keyword">int</span> iL <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// i &#x7684;&#x5DE6;&#x5B50;&#x8282;&#x70B9;</span>
+    <span class="token keyword">int</span> iR <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// i &#x7684;&#x53F3;&#x5B50;&#x8282;&#x70B9;</span>
+
+    <span class="token comment">// &#x9009;&#x51FA;&#x5F53;&#x524D;&#x7ED3;&#x70B9;&#x4E0E;&#x5176;&#x5B50;&#x7ED3;&#x70B9;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x7ED3;&#x70B9;&#x8BB0;&#x4E3A;j</span>
+    <span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>iL <span class="token operator">&lt;</span> len <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>iL<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> j <span class="token operator">=</span> iL<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>iR <span class="token operator">&lt;</span> len <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>iR<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> j <span class="token operator">=</span> iR<span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x6700;&#x5927;&#x7ED3;&#x70B9;&#x4EA4;&#x6362;&#x5230;&#x5F53;&#x524D;&#x6839;&#xFF0C;&#x5E76;&#x4F20;&#x9012;&#x8C03;&#x6574;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">!=</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">swapValue</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> j<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">heapAdjust</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> len<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//! &#x5806;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">heapSelectSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x3010;&#x6784;&#x5EFA;&#x5927;&#x9876;&#x5806;&#x3011;</span>
+    <span class="token comment">// &#x6240;&#x6709;&#x975E;&#x53F6;&#x8282;&#x70B9;&#xFF1A;[0, len / 2 - 1]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> len <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token function">heapAdjust</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> len<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x3010;&#x8C03;&#x6574;&#x5927;&#x9876;&#x5806;&#x3011;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">swapValue</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5C06;&#x5F53;&#x524D;&#x6700;&#x5927;&#x7684;&#x653E;&#x7F6E;&#x5230;&#x6570;&#x7EC4;&#x672B;&#x5C3E;</span>
+        <span class="token function">heapAdjust</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5C06;&#x672A;&#x5B8C;&#x6210;&#x6392;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x5806;&#x6392;&#x5E8F;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="txt" class="language-txt">&#x8F93;&#x5165; A, N
+&#x5FAA;&#x73AF; i &#x2208; [N/2 - 1, 0]
+    heapAdjust(A, N, i)
+&#x5FAA;&#x73AF; i &#x2208; [N - 1, 1]
+    &#x4EA4;&#x6362; A[i], A[0] &#x7684;&#x503C;
+    heapAdjust(A, i, 0)
+
+heapAdjust:
+    &#x8F93;&#x5165; A, N, I
+    l = 2 &#xD7; I + 1
+    r = 2 &#xD7; I + 2
+
+    j = I
+    &#x82E5; l &lt; N &#x4E14; A[l] &gt; A[j] &#x5219; j = l
+    &#x82E5; r &lt; N &#x4E14; A[r] &gt; A[j] &#x5219; j = r
+
+    &#x82E5; j &#x2260; I &#x5219;
+        &#x4EA4;&#x6362; A[j], A[I] &#x7684;&#x503C;
+        heapAdjust(A, N, j)
+</pre><h4 class="mume-header" id="arraytoheap">ArrayToHeap</h4>
+
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathsize="0.8em"><mtext>&#x5DE6;&#x5B50;&#x5E8F;</mtext></mstyle><mo>=</mo><mstyle mathsize="0.8em"><mtext>&#x7236;&#x5E8F;</mtext></mstyle><mo>&#xD7;</mo><mn>2</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\textnormal{\footnotesize &#x5DE6;&#x5B50;&#x5E8F;} = \textnormal{\footnotesize &#x7236;&#x5E8F;} &#xD7; 2 + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.546664em;vertical-align:0em;"></span><span class="mord text"><span class="mord textrm cjk_fallback sizing reset-size6 size4">&#x5DE6;&#x5B50;&#x5E8F;</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord textrm cjk_fallback sizing reset-size6 size4">&#x7236;&#x5E8F;</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathsize="0.8em"><mtext>&#x53F3;&#x5B50;&#x5E8F;</mtext></mstyle><mo>=</mo><mstyle mathsize="0.8em"><mtext>&#x7236;&#x5E8F;</mtext></mstyle><mo>&#xD7;</mo><mn>2</mn><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\textnormal{\footnotesize &#x53F3;&#x5B50;&#x5E8F;} = \textnormal{\footnotesize &#x7236;&#x5E8F;} &#xD7; 2 + 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.546664em;vertical-align:0em;"></span><span class="mord text"><span class="mord textrm cjk_fallback sizing reset-size6 size4">&#x53F3;&#x5B50;&#x5E8F;</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord textrm cjk_fallback sizing reset-size6 size4">&#x7236;&#x5E8F;</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></li>
+<li><span style="color: #CC9933">&#x975E;&#x53F6;&#x5E8F;&#x533A;&#x95F4;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mn>0</mn><mo separator="true">,</mo><mi>L</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\big[0, L / 2 - 1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20001em;vertical-align:-0.35001em;"></span><span class="mord"><span class="delimsizing size1">[</span></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">L</span><span class="mord">/2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span></span></li>
+<li><span style="color: #99FF99">&#x53F6;&#x5B50;&#x5E8F;&#x533A;&#x95F4;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>L</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mi>L</mi><mo>&#x2212;</mo><mn>1</mn><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo></mrow><annotation encoding="application/x-tex">\big[L / 2, L - 1\big]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20001em;vertical-align:-0.35001em;"></span><span class="mord"><span class="delimsizing size1">[</span></span><span class="mord mathnormal">L</span><span class="mord">/2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.20001em;vertical-align:-0.35001em;"></span><span class="mord">1</span><span class="mord"><span class="delimsizing size1">]</span></span></span></span></span></span></li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">int</span> A<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">,</span> <span class="token operator">?</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">//    I = {0, 1, 2, 3, 4, 5, 6, 7};</span>
+<span class="token comment">//    L = 8;</span>
+</pre><div class="mermaid">graph TB
+    style A0 fill:#CC9933;
+    style A1 fill:#CC9933;
+    style A2 fill:#CC9933;
+    style A3 fill:#CC9933;
+    style A4 fill:#99FF99;
+    style A5 fill:#99FF99;
+    style A6 fill:#99FF99;
+    style A7 fill:#99FF99;
+
+    style NIL_A3_R color:white,stroke:#aaa,fill:#aaa;
+    style NIL_A4_L color:white,stroke:#aaa,fill:#aaa;
+    style NIL_A4_R color:white,stroke:#aaa,fill:#aaa;
+    style NIL_A5_L color:white,stroke:#aaa,fill:#aaa;
+    style NIL_A5_R color:white,stroke:#aaa,fill:#aaa;
+    style NIL_A6_L color:white,stroke:#aaa,fill:#aaa;
+    style NIL_A6_R color:white,stroke:#aaa,fill:#aaa;
+
+    A0((&quot;A[0]&quot;));
+    A1((&quot;A[1]&quot;));
+    A2((&quot;A[2]&quot;));
+    A3((&quot;A[3]&quot;));
+    A4((&quot;A[4]&quot;));
+    A5((&quot;A[5]&quot;));
+    A6((&quot;A[6]&quot;));
+    A7((&quot;A[7]&quot;));
+
+    A0---A1; A0---A2;
+    A1---A3; A1---A4;
+    A2---A5; A2---A6;
+    A3---A7; A3---NIL_A3_R((&quot;NIL&quot;));
+    A4---NIL_A4_L((&quot;NIL&quot;)); A4---NIL_A4_R((&quot;NIL&quot;));
+    A5---NIL_A5_L((&quot;NIL&quot;)); A5---NIL_A5_R((&quot;NIL&quot;));
+    A6---NIL_A6_L((&quot;NIL&quot;)); A6---NIL_A6_R((&quot;NIL&quot;));
+</div><h4 class="mume-header" id="heapadjust">HeapAdjust</h4>
+
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">int</span> A<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">76</span><span class="token punctuation">,</span> <span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">97</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x6784;&#x5EFA;&#x5927;&#x9876;&#x5806;&#x540E;</span>
+<span class="token keyword">int</span> R<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">97</span><span class="token punctuation">,</span> <span class="token number">76</span><span class="token punctuation">,</span> <span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</pre><ul>
+<li><span style="color: yellow">&#x5F53;&#x524D;&#x8C03;&#x6574;&#x8282;&#x70B9;</span>&#x3001;<span style="color: orange">&#x88AB;&#x4F20;&#x9012;&#x8C03;&#x6574;&#x7684;&#x8282;&#x70B9;</span>&#x3001;<span style="color: pink">&#x6808;&#x9876;&#x6700;&#x503C;</span>&#x3001;<span style="color: lightgreen">&#x53D6;&#x4EE3;&#x6808;&#x9876;&#x7684;&#x5143;&#x7D20;</span>&#x3001;<span style="color: red">&#x51BB;&#x7ED3;</span></li>
+</ul>
+<div class="mermaid">graph TD
+    subgraph 2
+        style 2 stroke:#333,stroke-width:2px,fill:grey;
+        style B2 fill:yellow;
+        style D2 fill:orange;
+        A2((49));
+        B2((38));
+        C2((65));
+        D2((97));
+        E2((76));
+        F2((13));
+        G2((27));
+        H2((49));
+        A2---B2; A2---C2;
+        B2-.-D2; B2---E2;
+        C2---F2; C2---G2;
+        D2-.-H2;
+    end
+    subgraph 1
+        style 1 stroke:#333,stroke-width:2px,fill:grey;
+        style C1 fill:yellow;
+        A1((49));
+        B1((38));
+        C1((13));
+        D1((97));
+        E1((76));
+        F1((65));
+        G1((27));
+        H1((49));
+        A1---B1; A1---C1;
+        B1---D1; B1---E1;
+        C1-.-F1; C1---G1;
+        D1---H1;
+    end
+    subgraph 0
+        style 0 stroke:#333,stroke-width:2px,fill:grey;
+        style D0 fill:yellow;
+        A0((49));
+        B0((38));
+        C0((13));
+        D0((49));
+        E0((76));
+        F0((65));
+        G0((27));
+        H0((97));
+        A0---B0; A0---C0;
+        B0---D0; B0---E0;
+        C0---F0; C0---G0;
+        D0-.-H0;
+    end
+</div><div class="mermaid">graph TD
+    subgraph 5
+        style 5 stroke:#333,stroke-width:2px,fill:grey;
+        style H5 fill:red;
+        style A5 fill:yellow;
+        A5((38));
+        B5((76));
+        C5((65));
+        D5((49));
+        E5((49));
+        F5((13));
+        G5((27));
+        H5((97));
+        A5-.-B5; A5---C5;
+        B5-.-D5; B5---E5;
+        C5---F5; C5---G5;
+        D5---H5;
+    end
+    subgraph 4
+        style 4 stroke:#333,stroke-width:2px,fill:grey;
+        style A4 fill:pink;
+        style H4 fill:lightgreen;
+        A4((97));
+        B4((76));
+        C4((65));
+        D4((49));
+        E4((49));
+        F4((13));
+        G4((27));
+        H4((38));
+        A4---B4; A4---C4;
+        B4---D4; B4---E4;
+        C4---F4; C4---G4;
+        D4---H4;
+    end
+    subgraph 3
+        style 3 stroke:#333,stroke-width:2px,fill:grey;
+        style A3 fill:yellow;
+        style B3 fill:orange;
+        A3((49));
+        B3((97));
+        C3((65));
+        D3((49));
+        E3((76));
+        F3((13));
+        G3((27));
+        H3((38));
+        A3-.-B3; A3---C3;
+        B3---D3; B3-.-E3;
+        C3---F3; C3---G3;
+        D3---H3;
+    end
+</div><ul>
+<li>0-4&#x4E3A;&#x6784;&#x5EFA;&#x5927;&#x9876;&#x5806;&#xFF08;&#x9700;&#x8981;&#x4ECE;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x975E;&#x53F6;&#x7ED3;&#x70B9;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#x8FDB;&#x884C;<code>HeapAdjust</code>&#xFF09;&#xFF1B;</li>
+<li>4&#x4E3A;&#x6784;&#x5EFA;&#x5927;&#x9876;&#x5806;&#x7684;&#x7ED3;&#x679C;&#xFF1B;</li>
+<li>&#x4ECE;4&#x5F00;&#x59CB;&#x4E3A;&#x9009;&#x62E9;&#x6700;&#x5927;&#x503C;&#x6392;&#x5E8F;&#xFF0C;&#x540E;&#x7EED;&#x6BCF;&#x6B21;&#x4EC5;&#x9700;&#x5BF9;&#x6839;&#x8282;&#x70B9;&#x8FDB;&#x884C;<code>HeapAdjust</code>&#x5373;&#x53EF;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F">&#x4EA4;&#x6362;&#x6392;&#x5E8F;</h2>
+
+<h3 class="mume-header" id="%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">&#x5192;&#x6CE1;&#x6392;&#x5E8F;</h3>
+
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/bubble-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/bubble-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/bubble-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/bubble-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x7684;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>&#x57FA;&#x672C;&#x6709;&#x5E8F;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>&#x9002;&#x5E94;&#x6027;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">//! &#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">bubbleSwapSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// [0 &#x2192;i&#x2192; (len-1)]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// [(i+1) &#x2190;j&#x2190; (len-1)] &#x6BCF;&#x6B21;&#x4ECE;[i, len-1]&#x4E2D;&#x5192;&#x6CE1;&#x51FA;&#x4E00;&#x4E2A;&#x6700;&#x5C0F;&#x503C;&#x4FDD;&#x5B58;&#x5230;i&#x7684;&#x4F4D;&#x7F6E;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&gt;</span> i<span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">swapValue</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="txt" class="language-txt">&#x8F93;&#x5165; A, N
+&#x5FAA;&#x73AF; i &#x2208; [0, N - 1]
+    &#x5FAA;&#x73AF; j &#x2208; [N - 1, i)
+        &#x82E5; A[j - 1] &gt; A[j] &#x5219; &#x4EA4;&#x6362; A[j - 1], A[j] &#x7684;&#x503C;
+</pre><h3 class="mume-header" id="%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h3>
+
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x4E00;&#x8D9F;&#x6392;&#x5E8F;&#x5C06;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x5206;&#x5272;&#x6210;&#x72EC;&#x7ACB;&#x7684;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x6BD4;&#x53E6;&#x5916;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x8981;&#x5C0F;&#x3002;</p>
+</blockquote>
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/quick-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/quick-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/quick-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/quick-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x4E0D;&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msub><mrow><mi>log</mi><mo>&#x2061;</mo></mrow><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>&#xFF0C;&#x4F46;&#x901A;&#x5E38;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>&#x22C5;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \cdot log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x9002;&#x5E94;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">arrayAdjustL</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> boundL<span class="token punctuation">,</span> <span class="token keyword">int</span> boundR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> l <span class="token operator">=</span> boundL<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> r <span class="token operator">=</span> boundR<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> v <span class="token operator">=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x671F;&#x671B;&#x53F3;&#x4FA7;&#x6570;&#x636E;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x4E2D;&#x95F4;&#x6570;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> v<span class="token punctuation">)</span> r<span class="token operator">--</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x671F;&#x671B;&#x5DE6;&#x4FA7;&#x6570;&#x636E;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x4E2D;&#x95F4;&#x6570;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> v<span class="token punctuation">)</span> l<span class="token operator">++</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>boundL <span class="token operator">&lt;</span> <span class="token punctuation">(</span>l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token function">arrayAdjustL</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> boundL<span class="token punctuation">,</span> l <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> boundR<span class="token punctuation">)</span> <span class="token function">arrayAdjustL</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> boundR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//! &#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF08;&#x5347;&#x5E8F;&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">quickSwapSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">arrayAdjustL</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><pre data-role="codeBlock" data-info="txt" class="language-txt">&#x8F93;&#x5165; A, N
+&#x82E5; N &gt; 1 &#x5219; arrayAdjust(A, 0, N - 1)
+
+arrayAdjust:
+    &#x8F93;&#x5165; A, L, R
+    l = L, r = R, v = A[l]
+    &#x5FAA;&#x73AF;&#x5F53; l &lt; r
+        &#x5FAA;&#x73AF;&#x5F53; l &lt; r &#x4E14; A[r] &#x2265; A[p]
+            r--
+        A[l] = A[r]
+        &#x5FAA;&#x73AF;&#x5F53; l &lt; r &#x4E14; A[l] &#x2264; A[p]
+            l++
+        A[r] = A[l]
+    A[l] = v
+    &#x82E5; L &lt; (l - 1) &#x5219; arrayAdjust(A, L, l - 1)
+    &#x82E5; (l + 1) &lt; R &#x5219; arrayAdjust(A, l + 1, R)
+</pre><h4 class="mume-header" id="arrayadjustr">ArrayAdjustR</h4>
+
+<ul>
+<li><span style="color: yellow"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>e</mi><mi>f</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">left</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">t</span></span></span></span></span>&#x3001;<span style="color: orange"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">right</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">h</span><span class="mord mathnormal">t</span></span></span></span></span>&#x3001;<span style="color: skyblue"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>i</mi><mi>v</mi><mi>o</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">pivot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span></span></span></span></span>&#x3001;<span style="color: hotpink">&#x4E34;&#x65F6;&#x9501;&#x5B9A;</span>&#x3001;<span style="color: lightgreen">&#x6700;&#x7EC8;&#x547D;&#x4E2D;</span>&#x3001;<span style="color: red">&#x9501;&#x5B9A;</span></li>
+</ul>
+<div class="mermaid">graph LR
+    subgraph 6
+        style 6 stroke:#333,fill:grey;
+        style D6 fill:red;
+        A6((5))---
+        B6((2))---
+        C6((4))---
+        D6((7))---
+        E6((9))---
+        F6((8));
+    end
+    subgraph 5
+        style 5 stroke:#333,fill:grey;
+        style F5 fill:skyblue;
+        style D5 fill:lightgreen;
+        A5((5))---
+        B5((2))---
+        C5((4))---
+        D5((8))---
+        E5((9))---
+        F5((7));
+    end
+    subgraph 4
+        style 4 stroke:#333,fill:grey;
+        style F4 fill:skyblue;
+        style C4 fill:yellow;
+        style D4 fill:orange;
+        A4((5))---
+        B4((2))---
+        C4((4))---
+        D4((8))---
+        E4((9))---
+        F4((7));
+    end
+    subgraph 3
+        style 3 stroke:#333,fill:grey;
+        style F3 fill:skyblue;
+        style B3 fill:yellow;
+        style D3 fill:orange;
+        A3((5))---
+        B3((2))---
+        C3((4))---
+        D3((8))---
+        E3((9))---
+        F3((7));
+    end
+    subgraph 2
+        style 2 stroke:#333,fill:grey;
+        style F2 fill:skyblue;
+        style B2 fill:yellow,stroke:hotpink,stroke-width:5px;
+        style D2 fill:orange,stroke:hotpink,stroke-width:5px;
+        A2((5))---
+        B2((8))---
+        C2((4))---
+        D2((2))---
+        E2((9))---
+        F2((7));
+    end
+    subgraph 1
+        style 1 stroke:#333,fill:grey;
+        style F1 fill:skyblue;
+        style B1 fill:yellow,stroke:hotpink,stroke-width:5px;
+        style E1 fill:orange;
+        A1((5))---
+        B1((8))---
+        C1((4))---
+        D1((2))---
+        E1((9))---
+        F1((7));
+    end
+    subgraph 0
+        style 0 stroke:#333,fill:grey;
+        style F0 fill:skyblue;
+        style A0 fill:yellow;
+        style E0 fill:orange;
+        A0((5))---
+        B0((8))---
+        C0((4))---
+        D0((2))---
+        E0((9))---
+        F0((7));
+    end
+</div><ul>
+<li>&#x6CE8;&#x610F;&#x5728;5&#x4E2D;&#xFF0C;&#x5982;&#x679C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>i</mi><mi>v</mi><mi>o</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">pivot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span></span></span></span>&#x662F;&#x5927;&#x4E8E;&#x6700;&#x7EC8;&#x547D;&#x4E2D;&#x503C;&#x7684;&#x8BDD;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4EA4;&#x6362;&#x7684;&#xFF0C;&#x6B64;&#x65F6;&#x9501;&#x5B9A;&#x7684;&#x662F;&#x5176;&#x539F;&#x59CB;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x3002;</li>
+</ul>
+<h4 class="mume-header" id="arrayadjustl">ArrayAdjustL</h4>
+
+<ul>
+<li><span style="color: yellow"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>e</mi><mi>f</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">left</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">t</span></span></span></span></span>&#x3001;<span style="color: orange"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">right</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">h</span><span class="mord mathnormal">t</span></span></span></span></span>&#x3001;<span style="color: skyblue"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>i</mi><mi>v</mi><mi>o</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">pivot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span></span></span></span></span>&#x3001;<span style="color: hotpink">&#x4E34;&#x65F6;&#x9501;&#x5B9A;</span>&#x3001;<span style="color: lightgreen">&#x6700;&#x7EC8;&#x547D;&#x4E2D;</span>&#x3001;<span style="color: red">&#x9501;&#x5B9A;</span></li>
+</ul>
+<div class="mermaid">graph LR
+    subgraph 5
+        style 5 stroke:#333,fill:grey;
+        style C5 fill:red;
+        A5((2))---
+        B5((4))---
+        C5((5))---
+        D5((8))---
+        E5((9))---
+        F5((7));
+    end
+    subgraph 4
+        style 4 stroke:#333,fill:grey;
+        style C4 fill:lightgreen;
+        A4((2))---
+        B4((4))---
+        C4((?))---
+        D4((8))---
+        E4((9))---
+        F4((7));
+    end
+    subgraph 3
+        style 3 stroke:#333,fill:grey;
+        style B3 fill:yellow;
+        style C3 fill:orange,stroke:hotpink,stroke-width:5px;
+        A3((2))---
+        B3((?))---
+        C3((4))---
+        D3((8))---
+        E3((9))---
+        F3((7));
+    end
+    subgraph 2
+        style 2 stroke:#333,fill:grey;
+        style B2 fill:yellow,stroke:hotpink,stroke-width:5px;
+        style D2 fill:orange;
+        A2((2))---
+        B2((8))---
+        C2((4))---
+        D2((?))---
+        E2((9))---
+        F2((7));
+    end
+    subgraph 1
+        style 1 stroke:#333,fill:grey;
+        style A1 fill:yellow;
+        style D1 fill:orange,stroke:hotpink,stroke-width:5px;
+        A1((?))---
+        B1((8))---
+        C1((4))---
+        D1((2))---
+        E1((9))---
+        F1((7));
+    end
+    subgraph 0
+        style 0 stroke:#333,fill:grey;
+        style A0 fill:yellow,stroke:skyblue,stroke-width:5px;
+        style F0 fill:orange;
+        A0((5))---
+        B0((8))---
+        C0((4))---
+        D0((2))---
+        E0((9))---
+        F0((7));
+    end
+</div><h3 class="mume-header" id="%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E4%B8%89%E5%B9%B3%E5%9D%87">&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x4E09;&#x5E73;&#x5747;</h3>
+
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x4E09;&#x5E73;&#x5747;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/quick-sort-3-way.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/quick-sort-3-way.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/quick-sort-3-way.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/quick-sort-3-way.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x4E0D;&#x7A33;&#x5B9A;</li>
+<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msub><mrow><mi>log</mi><mo>&#x2061;</mo></mrow><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>&#xFF0C;&#x4F46;&#x901A;&#x5E38;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>&#x22C5;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \cdot log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+<li>&#x81EA;&#x9002;&#x5E94;&#xFF1A;&#x5F53;&#x6709;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>&#x4E2A;<strong>Unique Keys</strong>&#x65F6;&#x9700;&#x8981;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>&#x65F6;&#x95F4;</li>
+</ul>
+<h2 class="mume-header" id="%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">&#x5F52;&#x5E76;&#x6392;&#x5E8F;</h2>
+
+<div><table>
+    <thead>
+        <tr>
+            <td>&#x7B97;&#x6CD5;</td>
+            <td>&#x5B8C;&#x5168;&#x968F;&#x673A;</td>
+            <td>&#x57FA;&#x672C;&#x6709;&#x5E8F;</td>
+            <td>&#x9006;&#x6392;&#x5E8F;</td>
+            <td>&#x5C11;&#x6709;&#x4E0D;&#x540C;</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&#x5F52;&#x5E76;&#x6392;&#x5E8F;</td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/random-initial-order/merge-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/nearly-sorted-initial-order/merge-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/reversed-initial-order/merge-sort.gif">
+            </td>
+            <td>
+                <img alt="sorting" src="./images/animation/20/few-unique-keys/merge-sort.gif">
+            </td>
+        </tr>
+    </tbody>
+</table></div>  
+<ul>
+<li>&#x7A33;&#x5B9A;&#x6027;</li>
+<li>&#x6570;&#x7EC4;&#x8981;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>&#x989D;&#x5916;&#x7A7A;&#x95F4;&#xFF1B;&#x94FE;&#x8868;&#x8981;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msub><mrow><mi>log</mi><mo>&#x2061;</mo></mrow><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>&#x989D;&#x5916;&#x7A7A;&#x95F4;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>&#x22C5;</mo><msub><mrow><mi>log</mi><mo>&#x2061;</mo></mrow><mn>2</mn></msub><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \cdot \log_{2}n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>&#x65F6;&#x95F4;</li>
+<li>&#x4E0D;&#x81EA;&#x9002;&#x5E94;</li>
+<li>&#x4E0D;&#x9700;&#x8981;&#x968F;&#x673A;&#x63A5;&#x5165;&#x6570;&#x636E;</li>
+</ul>
+<h2 class="mume-header" id="%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F">&#x57FA;&#x6570;&#x6392;&#x5E8F;</h2>
+
+<p>&#x7565;</p>
+<div><script>
+for(let tbody of document.querySelectorAll('tbody')) {
+    tbody.onclick = function() {
+        const imgs = this.querySelectorAll('img');
+        for(let img of imgs) {
+            const currentSource = img.src;
+            img.src = currentSource.substr(0, currentSource.lastIndexOf("/") + 1) + "0.gif";
+            img.src = currentSource;
+        }
+    }
+}
+</script></div>  
+
+      </div>
+      
+      
+    
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false
+  window['MERMAID_CONFIG'].theme = "default"
+}
+mermaid.initialize(window['MERMAID_CONFIG'] || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    
+    
+    
+    
+  
+    </body></html>

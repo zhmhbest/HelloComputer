@@ -1,0 +1,12 @@
+<script>
+for(let tbody of document.querySelectorAll('tbody')) {
+    tbody.onclick = function() {
+        const imgs = this.querySelectorAll('img');
+        for(let img of imgs) {
+            const currentSource = img.src;
+            img.src = currentSource.substr(0, currentSource.lastIndexOf("/") + 1) + "0.gif";
+            img.src = currentSource;
+        }
+    }
+}
+</script>

@@ -2,7 +2,7 @@ package org.example.LinkedList;
 
 import org.example.EasyAssert;
 
-public class 倒数第k个节点 {
+public class 倒数第K个节点 {
     /**
      * former先走k步，此时former-latter两者保持k个距离
      * former与latter同走，former指向null结束

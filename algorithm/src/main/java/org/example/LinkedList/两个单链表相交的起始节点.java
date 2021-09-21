@@ -2,14 +2,6 @@ package org.example.LinkedList;
 
 public class 两个单链表相交的起始节点 {
 
-    /**
-     * 两个链表不相交
-     *      等长：O(n)末尾null时返回
-     *      不等长：O(m+n)后末尾null返回
-     * 两个链表相交
-     *      等长：O(n)交点返回
-     *      不等长：O(m+n)内交点返回
-     */
     static LinkedListNode getIntersectionNode(LinkedListNode headA, LinkedListNode headB) {
         if (headA == null || headB == null) return null;
 

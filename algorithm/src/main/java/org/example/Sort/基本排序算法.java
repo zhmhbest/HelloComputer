@@ -112,7 +112,7 @@ public class 基本排序算法 {
         return arr;
     }
 
-    static void arrayAdjust(int[] arr, int boundL, int boundR) {
+    static void arrayAdjustR(int[] arr, int boundL, int boundR) {
         // 每轮确定一个中间数arr[p]的位置
         int p = boundR; // 此处使用右值
         int l = boundL;
@@ -141,18 +141,42 @@ public class 基本排序算法 {
             // 不满足期望，交换两侧数据
             swapValue(arr, l, r);
         }
-        if (boundL < (l - 1)) arrayAdjust(arr, boundL, l - 1);
-        if ((l + 1) < boundR) arrayAdjust(arr, l + 1, boundR);
+        if (boundL < (l - 1)) arrayAdjustR(arr, boundL, l - 1);
+        if ((l + 1) < boundR) arrayAdjustR(arr, l + 1, boundR);
     }
 
     /**
-     * 快速排序
+     * 快速排序（最右值）
      */
-    static int[] quickSwapSort(int[] arr, int len) {
-        if (len > 1) arrayAdjust(arr, 0, len - 1);
+    static int[] quickSwapSortR(int[] arr, int len) {
+        if (len > 1) arrayAdjustR(arr, 0, len - 1);
         return arr;
     }
 
+    static void arrayAdjustL(int[] arr, int boundL, int boundR) {
+        int l = boundL;
+        int r = boundR;
+        int v = arr[l];
+        while (l < r) {
+            // 期望右侧数据大于等于中间数
+            while (l < r && arr[r] >= v) r--;
+            arr[l] = arr[r];
+            // 期望左侧数据小于等于中间数
+            while (l < r && arr[l] <= v) l++;
+            arr[r] = arr[l];
+        }
+        arr[l] = v;
+        if (boundL < (l - 1)) arrayAdjustL(arr, boundL, l - 1);
+        if ((l + 1) < boundR) arrayAdjustL(arr, l + 1, boundR);
+    }
+
+    /**
+     * 快速排序（最左值）
+     */
+    static int[] quickSwapSortL(int[] arr, int len) {
+        if (len > 1) arrayAdjustL(arr, 0, len - 1);
+        return arr;
+    }
 
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
@@ -167,7 +191,8 @@ public class 基本排序算法 {
             EasyAssert.AssertEqual(tgt, simpleSelectSort(arr.clone(), arr.length));
             EasyAssert.AssertEqual(tgt, heapSelectSort(arr.clone(), arr.length));
             EasyAssert.AssertEqual(tgt, bubbleSwapSort(arr.clone(), arr.length));
-            EasyAssert.AssertEqual(tgt, quickSwapSort(arr.clone(), arr.length));
+            EasyAssert.AssertEqual(tgt, quickSwapSortR(arr.clone(), arr.length));
+            EasyAssert.AssertEqual(tgt, quickSwapSortL(arr.clone(), arr.length));
         }
     }
 

@@ -1,13 +1,7 @@
 package org.example.LinkedList;
 
-public class 判断链表中是否有环 {
-    /**
-     * 龟兔赛跑，若有环，则兔子早晚能追上乌龟
-     * 循环终止条件
-     *      有指针为null：无环
-     *      指针相同且不为null：有环
-     * O(n)时间复杂度
-     */
+public class 链表中是否有环 {
+
     static boolean hasCycle(LinkedListNode head) {
         LinkedListNode slow = head, fast = head;
         for (;;) {
