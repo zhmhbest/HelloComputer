@@ -9,6 +9,23 @@
 
 ### HTTP/HTTPS
 
+#### 常见状态码
+
+| 状态码 | 名称                  | 补充说明                           |
+| -----: | :-------------------- | :--------------------------------- |
+|    200 | OK                    |                                    |
+|    206 | Partial  Content      | 服务器成功处理了部分请求           |
+|    301 | Moved  Permanently    | 永久移动                           |
+|    302 | Found                 | 临时移动                           |
+|    304 | Not  Modified         | 文件未修改，使用缓存               |
+|    307 | Temporary  Redirect   | 临时重定向                         |
+|    400 | Bad Request           | 请求错误                           |
+|    403 | Forbidden             | 禁止访问                           |
+|    404 | Not  Found            | 资源未找到                         |
+|    500 | Internal Server Error | 服务器内部错误                     |
+|    502 | Bad Gateway           | 网关异常                           |
+|    503 | Service  Unavailable  | 服务器忙，暂时无法处理客户端的请求 |
+
 #### http与https的区别
 
 | 区别 | http | https |
