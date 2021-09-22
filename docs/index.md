@@ -63,7 +63,7 @@
 
 ### [进程](./OS/index.html#进程)
 
-<span class='highlight'>进程线程协程的区别</span>、<span class='highlight'>线程调度算法</span>、<span class='highlight'>进程间通信方式</span>
+<span class='highlight'>进程线程协程的区别</span>、<span class='highlight'>线程调度算法</span>、<span class='highlight'>进程间通信方式</span>、<span class='highlight'>信号量机制</span>
 
 ### [内存](./OS/index.html#内存)
 
