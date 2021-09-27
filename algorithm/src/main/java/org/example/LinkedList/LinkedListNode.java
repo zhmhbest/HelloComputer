@@ -52,4 +52,11 @@ public class LinkedListNode {
         System.arraycopy(buffer, 0, result, 0, p);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "LinkedListNode{" +
+                "val=" + val +
+                '}';
+    }
 }

@@ -4,13 +4,12 @@ public class 链表中是否有环 {
 
     static boolean hasCycle(LinkedListNode head) {
         LinkedListNode slow = head, fast = head;
-        for (;;) {
-            // fast不为null，则slow一定不为null
-            if (null == fast || null == fast.next) return false;
-            slow = slow.next;
+        while (null != fast && null != fast.next) {
             fast = fast.next.next;
+            slow = slow.next;
             if (slow == fast) return true;
         }
+        return false;
     }
 
     public static void main(String[] args) {
