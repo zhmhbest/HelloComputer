@@ -1,6 +1,6 @@
 package org.example.ThreadRelatives;
 
-public class 线程按序运行 {
+public class 线程同步 {
 
     static class Speaker implements Runnable {
         protected Speaker prev;
