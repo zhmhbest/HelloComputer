@@ -3,6 +3,8 @@
 
 # [计算机知识点](https://github.com/zhmhbest/HelloComputer)
 
+## [软件工程](./SoftwareEngineering/index.html)
+
 ## [差错校验](./ErrorChecking/index.html)
 
 ### [奇偶校验](./ErrorChecking/index.html#奇偶校验)
