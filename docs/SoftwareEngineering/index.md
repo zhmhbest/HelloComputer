@@ -20,7 +20,7 @@
 - 软件测试
 - 运行与维护
 
-## 软件开发模型（SDLC）
+## 软件开发模型
 
 |                                       模型 | 说明                                                         |
 | -----------------------------------------: | :----------------------------------------------------------- |
@@ -31,6 +31,14 @@
 |              螺旋模型<br/>（Spiral Model） | 快速原型模型+瀑布模型，引入了风险分析，适合于大型复杂的系统  |
 |            演化模型<br/>（Fountain Model） | 迭代开发方法，适用于对软件需求缺乏准确认识的情况             |
 |            喷泉模型<br/>（Fountain Model） | 描述面向对象的软件开发过程                                   |
+
+<img alt="Waterfall Model" src="./images/SDLC/W.png" style="width:40%"/>
+
+<img alt="V Model" src="./images/SDLC/V.png" style="width:40%"/>
+
+<img alt="Spiral Model" src="./images/SDLC/S.png" style="width:40%"/>
+
+<img alt="Incremental Model" src="./images/SDLC/I.png" style="width:40%"/>
 
 ## 设计模式
 
@@ -45,13 +53,6 @@
 | 接口隔离原则<br/>（Interface Segregation Principle） | 客户端不应该依赖它不需要的接口、类间的依赖关系应该建立在最小的接口上。 |
 |  依赖倒置原则<br/>（Dependence Inversion Principle） | 上层模块不应该依赖底层模块，它们都应该依赖于抽象、抽象不应该依赖于细节，细节应该依赖于抽象。 |
 |       合成复用原则<br/>（Composite Reuse Principle） | 尽量使用对象组合/聚合，而不是继承关系达到软件复用的目的。    |
-
-### 策略模式和模板模式
-
-| 模式 | 说明                                         | 优点                     | 缺点                                               |
-| ---: | -------------------------------------------- | :----------------------- | :------------------------------------------------- |
-| 策略 | 提供抽象接口，由具体实现类提供不同算法       | 横向扩展性好，灵活性高   | 客户端需要知道全部策略，若策略过多会导致复杂度升高 |
-| 模板 | 对同一个算法的不同细节进行抽象提供不同的实现 | 可维护性好，纵向扩展性好 | 耦合性较高，子类无法影响父类公用模块代码           |
 
 ### 创建型模式（Creational Pattern）
 
@@ -109,18 +110,232 @@ public class Main {
 
 ### 结构型模式（Structural Pattern）
 
-适配器模式、装饰者模式、代理模式、外观模式、桥接模式、组合模式、享元模式
+| 模式           | 说明                                                         |
+| -------------: | :----------------------------------------------------------- |
+| **适配器模式** | 为两个不兼容的接口之间的桥梁。                               |
+| **装饰器模式** | 向一个现有的对象添加新的功能，同时又不改变其结构。           |
+| **代理模式**   | 一个类代表另一个类的功能。                                   |
+| **外观模式**   | 隐藏系统的复杂性，提供一个可以访问的接口。                   |
+| **桥接模式**   | 把抽象化与实现化解耦，使得二者可以独立变化。                 |
+| **组合模式**   | 把一组相似的对象当作一个单一的对象，创建了对象组的树形结构。 |
+| **享元模式**   | 减少创建对象的数量，以减少内存占用和提高性能。               |
 
 ### 行为型模式（Behavioral Pattern）
 
-策略模式、模板方法模式、观察者模式、迭代器模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式
+|           模式 | 说明                                                         |
+| -------------: | :----------------------------------------------------------- |
+|   **策略模式** | 一个类的行为或其算法可以在运行时更改。                       |
+|   **模板方法** | 抽象类定义，子类实现，调用抽象类运行。                       |
+| **观察者模式** | 当一个对象被修改时，则会自动通知它的依赖对象。               |
+| **迭代器模式** | 用于顺序访问集合对象的元素。                                 |
+| **责任链模式** | 若对象不能处理该请求，则把请求传给下一个接收者。             |
+|   **命令模式** | 请求以命令的形式包裹在对象中，调用对象寻找可以处理该命令的合适的对象。 |
+| **备忘录模式** | 保存一个对象的某个状态，以便在适当的时候恢复对象。           |
+|   **状态模式** | 类的行为是基于它的状态改变的。                               |
+| **访问者模式** | 元素的执行算法可以随着访问者改变而改变。                     |
+|   **中介模式** | 提供了一个中介类，用来降低多个对象和类之间的通信复杂性。     |
+| **解释器模式** | 提供了评估语言的语法或表达式的方式。                         |
 
-## 面向对象与UML
+#### 策略模式和模板模式
 
-泛化、实现、关联、聚合、组合、依赖
-泛化关系：面向对象语言中的继承关系
-实现关系：继承一个抽象类
-组合关系：成员变量
-聚合关系：是整体与部分的关系
-关联关系：是整体与部分的关系
-依赖关系：一个类的实现需要另一个类的协助
+| 模式 | 说明                                         | 优点                     | 缺点                                               |
+| ---: | -------------------------------------------- | :----------------------- | :------------------------------------------------- |
+| 策略 | 提供抽象接口，由具体实现类提供不同算法       | 横向扩展性好，灵活性高   | 客户端需要知道全部策略，若策略过多会导致复杂度升高 |
+| 模板 | 对同一个算法的不同细节进行抽象提供不同的实现 | 可维护性好，纵向扩展性好 | 耦合性较高，子类无法影响父类公用模块代码           |
+
+## UML
+
+### Hello
+
+```mermaid
+classDiagram
+    %% 设置图表方向
+    direction LR
+
+    %% 定义对象
+    class Thread {
+        int threadId
+        run() void
+    }
+
+    %% 补充对象成员
+    Thread: main(String[] args) void
+```
+
+### Visibility
+
+```mermaid
+classDiagram
+    class Object {
+        Type memberDefault
+        +Type memberPublic
+        -Type memberPrivate
+        #Type memberProtected
+        ~Type memberPackageOrInternal
+        methorStatic()$
+        methorAbstract()*
+    }
+```
+
+### Annotations
+
+```mermaid
+classDiagram
+    class Runnable {
+        <<Interface>>
+    }
+    class Animal {
+        <<Abstract>>
+    }
+    class HttpService {
+        <<Service>>
+    }
+    class Color{
+        <<Enumeration>>
+        RED
+        BLUE
+        GREEN
+        WHITE
+        BLACK
+    }
+```
+
+### Relationship & Relations
+
+`ObjectA "<CardinalityA>" <Arrow> "<CardinalityB>" ObjectB`
+
+|                    关系 | `Arrow` | 说明                           |
+| ----------------------: | :----: | :----------------------------- |
+| **泛化（Inheritance）** | `--|>` | 面向对象语言中的继承关系       |
+| **实现（Realization）** | `..|>` | 继承一个抽象类                 |
+| **组合（Composition）** | `--*`  | 成员变量                       |
+| **聚合（Aggregation）** | `--o`  | 是整体与部分的关系             |
+| **关联（Association）** | `-->`  | 是整体与部分的关系             |
+|  **依赖（Dependency）** | `..>`  | 一个类的实现需要另一个类的协助 |
+|          **Solid Link** |  `--`  |                                |
+|         **Dashed Link** |  `..`  |                                |
+
+```mermaid
+classDiagram
+    classAA --|> classA : Inheritance
+    classBB ..|> classB : Realization
+    classCC --*  classC : Composition
+    classDD --o  classD : Aggregation
+    classEE -->  classE : Association
+    classFF ..>  classF : Dependency
+    classGG  --  classG : Link(Solid)
+    classHH  ..  classH : Link(Dashed)
+```
+
+```txt
+classDiagram
+    classAA --|> classA : Inheritance
+    classBB ..|> classB : Realization
+    classCC --*  classC : Composition
+    classDD --o  classD : Aggregation
+    classEE -->  classE : Association
+    classFF ..>  classF : Dependency
+    classGG  --  classG : Link(Solid)
+    classHH  ..  classH : Link(Dashed)
+```
+
+| `Cardinality` | 说明            |
+| ------------: | --------------- |
+|           `1` | *Only 1*        |
+|           `n` | *Some*（$n>1$） |
+|           `*` | *Many*          |
+|        `0..1` | *Zero or One*   |
+|        `0..*` | *Zero or More*  |
+|        `1..*` | *One or More*   |
+|        `0..n` | *Zero or Some*  |
+|        `1..n` | *One or Some*   |
+
+```mermaid
+classDiagram
+    %% 1对1
+    Student "1" --> "1" Seat
+
+    %% 1对多
+    Student "1" --> "1..*" Course
+
+    %% 1对0 或 1对1
+    Student "1" --> "0..1" Glasses
+
+    %% 1对0 或 1对一些
+    Student "1" --> "0..n" Reward
+
+    %% 银河中有很多星星
+    Galaxy --> "many" Star : Contains
+```
+
+```txt
+classDiagram
+    %% 1对1
+    Student "1" --> "1" Seat
+
+    %% 1对多
+    Student "1" --> "1..*" Course
+
+    %% 1对0 或 1对1
+    Student "1" --> "0..1" Glasses
+
+    %% 1对0 或 1对一些
+    Student "1" --> "0..n" Reward
+
+    %% 银河中有很多星星
+    Galaxy --> "many" Star : Contains
+```
+
+### Demonstrate
+
+```mermaid
+classDiagram
+    class Animal {
+        <<Abstract>>
+        #int age
+        #bool gender
+        +setAge(int age) void
+        +getAge() int
+        +setGender(bool gender) void
+        +getGender() bool
+        +run()* void
+    }
+    class Duck {
+        +run() void
+    }
+    class Fish {
+        +run() void
+    }
+    class Rabbit {
+        +run() void
+    }
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Rabbit
+```
+
+```txt
+classDiagram
+    class Animal {
+        <<Abstract>>
+        #int age
+        #bool gender
+        +setAge(int age) void
+        +getAge() int
+        +setGender(bool gender) void
+        +getGender() bool
+        +run()* void
+    }
+    class Duck {
+        +run() void
+    }
+    class Fish {
+        +run() void
+    }
+    class Rabbit {
+        +run() void
+    }
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Rabbit
+```

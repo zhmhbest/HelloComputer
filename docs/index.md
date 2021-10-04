@@ -5,6 +5,12 @@
 
 ## [软件工程](./SoftwareEngineering/index.html)
 
+### [软件开发模型](./SoftwareEngineering/index.html#软件开发模型)
+
+### [设计模式](./SoftwareEngineering/index.html#设计模式)
+
+### [UML](./SoftwareEngineering/index.html#uml)
+
 ## [差错校验](./ErrorChecking/index.html)
 
 ### [奇偶校验](./ErrorChecking/index.html#奇偶校验)
