@@ -1,63 +1,54 @@
 
-用于实现**资源共享**和**信息传递**的系统。
+计算机网络是用于实现**资源共享**和**信息传递**的系统。
 
-### 计算机网络分类
+### 网络组成
+
+- 计算机
+- 服务器
+- 通信线路
+- 通信设备
+- 网络操作系统
+- 网络协议：为进行网络中数据交换而建立的规则/标准/约定。包含**语法**、**语义**、**同步**三个要素。
+
+### 网络功能
+
+数据通信、资源共享、提高性能、负载均衡、分布式处理
+
+### 网络分类
 
 - 按作用范围：广域网（WAN）、城域网（MAN）、局域网（LAN）、个人区域网（PAN）
-- 按使用者：公用网、专用网
+- 按拓扑结构：星型拓扑、树形拓扑、总线型拓扑、环型拓扑、网状拓扑
+- 按使用范围：公用网、专用网
+- 按逻辑功能：资源子网、通信子网
+- 按通信方式：C/S、B/S、对等连接
 
 ### 性能指标
 
-#### 速率
-
-数据传送速率。
-
-$$
-\textnormal{\footnotesize 比特率} = \dfrac{
+- **速率**：$\textnormal{\footnotesize 比特率} = \dfrac{
     \textnormal{\footnotesize 传送比特量}
 }{
     \textnormal{\footnotesize 秒}
-}
-$$
-
-#### 带宽
-
-原指最高频率与最低频率之差。在计算机网络中，带宽表示通信线路传送能力（最高速率）。
-
-#### 吞吐量
-
-单位时间内通过某个网络（信道、接口）的数据量。
-
-#### 时延
-
-数据从一端传送到另一端所需的时间。
-
-- $\textnormal{\footnotesize 时延 = 发送时延 + 传播时延 + 排队时延 + 处理时延}$
-- $\textnormal{\footnotesize 时延带宽积 = 传播时延 × 带宽}$<span class='hint'>（描述了链路数据容量）</span>
-- $\textnormal{\footnotesize RTT = 传播时延 × 2 + 中间结点转发时间 × 2 + 末端处理时间}$
-
-#### 利用率
-
-$$
-    \textnormal{\footnotesize 信道利用率} =
-    \dfrac{
-        \textnormal{\footnotesize 有数据通过的时间}
-    }{
-        \textnormal{\footnotesize 有数据通过的时间}
-        +
-        \textnormal{\footnotesize 无数据通过的时间}
-    }
-$$
-
-信道利用率并非越高越好。
+}$
+- **带宽**：原指最高频率与最低频率之差。在计算机网络中，带宽表示通信线路传送能力（最高速率）。
+- **吞吐量**：单位时间内通过某个网络（信道、接口）的数据量。
+- **时延**：数据从一端传送到另一端所需的时间。
+  - $\textnormal{\footnotesize 时延 = 发送时延 + 传播时延 + 排队时延 + 处理时延}$
+  - $\textnormal{\footnotesize 时延带宽积 = 传播时延 × 带宽}$<span class='hint'>（描述了链路数据容量）</span>
+  - $\textnormal{\footnotesize RTT = 传播时延 × 2 + 中间结点转发时间 × 2 + 末端处理时间}$
+- **利用率**：$\textnormal{\footnotesize 信道利用率} =
+\dfrac{
+    \textnormal{\footnotesize 有数据通过的时间}
+}{
+    \textnormal{\footnotesize 有数据通过的时间}
+    +
+    \textnormal{\footnotesize 无数据通过的时间}
+}$<span class='hint'>（信道利用率并非越高越好）</span>
 
 ### 计算机网络体系结构
 
+>背诵：应(表会)运网链物。
+
 @import "tables/osi.html"
-
-#### 网络协议
-
-为进行网络中数据交换而建立的规则/标准/约定。包含**语法**、**语义**、**同步**三个要素。
 
 #### 集线器、交换机、路由器区别
 

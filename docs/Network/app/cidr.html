@@ -1,0 +1,81 @@
+<div style="display: inline-block; border: 1px solid #ccc; padding: 20px">
+    <input placeholder="IP地址" name="ip" value="192.168.1.255" onchange="onCIDRChange()" />
+    <span>/</span>
+    <input placeholder="子网掩码" name="mask" value="24" onchange="onCIDRChange()" />
+    <span>=</span>
+    <code id="cidrResult"></code>
+</div>
+<script>
+    // ArrayBuffer.prototype.toHexString = function (splitter) {
+    //     splitter = splitter || ',';
+    //     const out = [];
+    //     const bytes = new Uint8Array(this);
+    //     let ch;
+    //     for (let i = 0; i < this.byteLength; i++) {
+    //         ch = bytes[i].toString(16);
+    //         if (1 === ch.length) {
+    //             out.push('0' + ch);
+    //         } else {
+    //             out.push(ch);
+    //         }
+    //     }
+    //     return out.join(splitter);
+    // };
+    function onCIDRChange() {
+        // Buffer
+        const ipBuffer = new ArrayBuffer(4);
+        const ipView = new DataView(ipBuffer);
+        const maskBuffer = new ArrayBuffer(4);
+        const maskView = new DataView(maskBuffer);
+        const netBuffer = new ArrayBuffer(4);
+        const netView = new DataView(netBuffer);
+        const netResult = [];
+        const hostBuffer = new ArrayBuffer(4);
+        const hostView = new DataView(hostBuffer);
+        // document
+        const ipValue = document.querySelector("input[name='ip']").value.trim();
+        const maskValue = document.querySelector("input[name='mask']").value.trim();
+        const cidrResult = document.querySelector("#cidrResult");
+        // 处理输入
+        const ipSplitArray = ipValue.split(".");
+        if (4 !== ipSplitArray.length) {
+            cidrResult.innerText = "IP错误";
+            return;
+        }
+        for (let i = 0; i < 4; i++) {
+            let num = parseInt(ipSplitArray[i].trim());
+            if(num > 255 || num < 0) { cidrResult.innerText = "IP错误"; return; }
+            ipView.setUint8(i, num);
+        }
+        const maskSplitArray = maskValue.split(".");
+        if (4 === maskSplitArray.length) {
+            for (let i = 0; i < 4; i++) {
+                let num = parseInt(maskSplitArray[i].trim());
+                if(num > 255 || num < 0) { cidrResult.innerText = "掩码错误"; return; }
+                maskView.setUint8(i, num);
+            }
+        } else if (1 === maskSplitArray.length) {
+            const sum1 = 32 - parseInt(maskSplitArray[0].trim());
+            let whiteNum = 0;
+            for (let i = 0; i < sum1; i++) {
+                whiteNum += Math.pow(2, i);
+            }
+            maskView.setUint32(0, 0xFFFFFFFF - whiteNum)
+        } else {
+            cidrResult.innerText = "掩码错误";
+            return;
+        }
+        // 网络号
+        netView.setUint32(0, ipView.getUint32() & maskView.getUint32());
+        for (let i = 0; i < 4; i++) {
+            netResult.push(netView.getUint8(i));
+        }
+        // console.log(netResult.join("."));
+        // 主机号
+        hostView.setUint32(0, ipView.getUint32() & ~maskView.getUint32());
+        // console.log(hostView.getUint32(0));
+        // 结果
+        cidrResult.innerText = `网络号：${netResult.join(".")}，主机号：${hostView.getUint32(0)}`;
+    }
+    onCIDRChange();
+</script>

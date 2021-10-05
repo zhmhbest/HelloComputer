@@ -5,7 +5,9 @@
             <th>TCP/IP 4层结构</th>
             <th>TCP/IP 5层结构</th>
             <th>物理设备</th>
-            <th>协议</th>
+            <th>主要协议</th>
+            <th>数据单位</th>
+            <th>主要功能</th>
         </tr>
     </thead>
     <tbody>
@@ -13,8 +15,10 @@
             <td>7 应用层</td>
             <td rowspan="3">应用层</td>
             <td rowspan="3">5 应用层</td>
-            <td rowspan="3">N/A</td>
-            <td rowspan="3">HTTP、FTP、DNS、SMTP</td>
+            <td rowspan="3"></td>
+            <td rowspan="3">DNS、DHCP<br>HTTP、FTP、TFTP<br>SMTP、SNMP</td>
+            <td rowspan="3"></td>
+            <td rowspan="3"></td>
         </tr>
         <tr>
             <td>6 表示层</td>
@@ -36,27 +40,35 @@
             <td>4 传输层/运输层</td>
             <td>四层交换机、四层路由器</td>
             <td>TCP、UDP</td>
+            <td>数据段</td>
+            <td>数据分段、端到端的逻辑通信</td>
         </tr>
         <tr>
             <td>3 网络层</td>
             <td>网络层</td>
             <td>3 网络层</td>
             <td>三层交换机、路由器</td>
-            <td>ARP、IP、ICMP、IGMP</td>
+            <td>IP、ICMP、IGMP<br>ARP、RARP<br>RIP、OSPF、BGP</td>
+            <td>数据报</td>
+            <td>路径选择与寻址</td>
         </tr>
         <tr>
             <td>2 数据链路层</td>
             <td rowspan="2">网络接口层</td>
             <td>2 数据链路层</td>
-            <td>网桥、交换机（多口网桥）、网卡</td>
-            <td>PPP、CSMA/CD</td>
+            <td>网桥、交换机（多口网桥）<br>网卡</td>
+            <td>SLIP、PPP<br>CSMA/CD、CSMA/CA</td>
+            <td>数据帧</td>
+            <td>封装成帧、流量控制、链路管理</td>
         </tr>
         <tr>
             <td>1 物理层</td>
             <!-- 网络接口层 -->
             <td>1 物理层</td>
-            <td>中继器（再生数字信号）、集线器（多口中继器）、双绞线</td>
-            <td>略</td>
+            <td>中继器（再生数字信号）<br>集线器（多口中继器）<br>同轴电缆、双绞线、光纤</td>
+            <td></td>
+            <td>比特流</td>
+            <td>信号（比特流）的传输</td>
         </tr>
     </tbody>
 </table>
