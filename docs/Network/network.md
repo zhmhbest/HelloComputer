@@ -1,10 +1,6 @@
 
 **网络层功能**：异构网络互联、拥塞控制、路由选择与分组转发、尽最大努力交付
 
-**数据交换方式**：
-
-![data_swap](images/data_swap.png)
-
 ### IP
 
 #### IP数据报
@@ -29,17 +25,12 @@
 
 #### 子网划分
 
+>**子网号**可以纯0或纯1，<span class='highlight'>**主机号**不能纯0或纯1</span>。
+
 @import "tables/subnet.html"
 
-$\textnormal{\footnotesize 网络地址} = \textnormal{\footnotesize IP地址} { \ \& \ } \textnormal{\footnotesize 子网掩码}$
-
-#### CIDR
-
-@import "tables/cidr.html"
-
-记法：IP地址/前缀长度
-
-<span class='highlight'>主机号不能纯0或纯1</span>
+- $\textnormal{\footnotesize 网络地址} = \textnormal{\footnotesize IP地址} { \ \& \ } \textnormal{\footnotesize 子网掩码}$
+- $\textnormal{\footnotesize 网络前缀} = \textnormal{\footnotesize IP地址}/\textnormal{\footnotesize 前缀长度}$
 
 @import "app/cidr.html"
 
@@ -96,4 +87,4 @@ ARP协议默认每台主机在向网络中发送应答信号时都使用的是�
 - 公用分组交换数据网
 - 综合也无数字网
 - 帧中继FR
-- ATM技术（异步传输模式）建立在电路交换和分组交换的基础上，以信元为基础。
+- ATM技术（异步传输模式）：建立在电路交换和分组交换的基础上，以信元为基础，需要周期性的插入ATM信元。
