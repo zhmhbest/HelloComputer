@@ -4,6 +4,7 @@
 target/
 out/
 dump/
+cmake-build-*/
 
 
 .settings/
