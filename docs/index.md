@@ -110,3 +110,5 @@
 ### [冒泡排序](./InnerSorting/index.html#冒泡排序)
 
 ### [快速排序](./InnerSorting/index.html#快速排序)
+
+## [Java八股](./StereotypedJava/index.html)

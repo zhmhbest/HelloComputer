@@ -10,6 +10,7 @@ cmake-build-*/
 .settings/
 .classpath
 .project
+.factorypath
 
 
 *.class
