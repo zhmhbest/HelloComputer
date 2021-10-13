@@ -45,4 +45,16 @@ public class EasyAssert {
     public static void AssertEqual(boolean val1, boolean val2) {
         if (val1 != val2) throw new AssertionError(String.format("%b ≠ %b", val1, val2));
     }
+
+    public static void AssertNPlus(int[] arr) {
+        for (int val : arr) {
+            if (val <= 0) throw new AssertionError(String.format("%d ≤ 0", val));
+        }
+    }
+
+    public static void AssertNPlus(long[] arr) {
+        for (long val : arr) {
+            if (val <= 0) throw new AssertionError(String.format("%d ≤ 0", val));
+        }
+    }
 }
