@@ -9,9 +9,17 @@
 
 @import "introduction.md"
 
-## 进程
+## 进程与线程
 
-@import "process.md"
+@import "process_thread.md"
+
+## 进程互斥与同步
+
+@import "process_mutex_sync.md"
+
+## 进程调度
+
+@import "process_control.md"
 
 ## 内存
 
