@@ -25,10 +25,14 @@
 
 @import "memory.md"
 
+## 设备
+
+@import "device.md"
+
+## 磁盘
+
+@import "disk.md"
+
 ## 文件
 
 @import "file.md"
-
-## I/O
-
-@import "io.md"

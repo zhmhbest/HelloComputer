@@ -71,17 +71,31 @@
 
 ### [进程](./OS/index.html#进程)
 
-<span class='highlight'>进程线程协程的区别</span>、<span class='highlight'>线程调度算法</span>、<span class='highlight'>进程间通信方式</span>、<span class='highlight'>信号量机制</span>
+<span class='highlight'>进程线程协程的区别</span>、<span class='highlight'>进程间通信方式</span>
+
+### [进程互斥与同步](./OS/index.html#进程互斥与同步)
+
+<span class='highlight'>信号量机制</span>
+
+### [进程调度](./OS/index.html#进程调度)
+
+<span class='highlight'>进程调度层次</span>、<span class='highlight'>进程调度算法</span>
 
 ### [内存](./OS/index.html#内存)
 
-<span class='highlight'>覆盖与交换</span>、<span class='highlight'>分页与分段</span>、<span class='highlight'>虚拟内存（逻辑地址与物理地址）</span>、<span class='highlight'>页面置换算法</span>、<span class='highlight'>颠簸现象</span>
+<span class='highlight'>动态分区分配算法</span>、<span class='highlight'>分页存储管理</span>、<span class='highlight'>虚拟内存（逻辑地址与物理地址）</span>、<span class='highlight'>页面置换算法</span>
+
+### [设备](./OS/index.html#设备)
+
+<span class='highlight'>设备控制方式</span>
+
+### [磁盘](./OS/index.html#磁盘)
+
+<span class='highlight'>磁盘调度算法</span>
 
 ### [文件](./OS/index.html#文件)
 
 <span class='highlight'>硬链接与软连接</span>
-
-### [I/O](./OS/index.html#io)
 
 ## [组成原理](./Compose/index.html)
 
