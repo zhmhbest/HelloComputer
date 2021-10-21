@@ -1,19 +1,27 @@
 
-**程序**：是指令的有序集合，程序是静态概念，进程是动态概念。
+**程序（Program）**：是指令的有序集合（静态概念）。
+
+**进程（Process）**：进程实体（PCB）的运行过程（动态概念），是系统进行资源分配和调度的独立单位。一个进程可以执行多个程序。
+
+**作业（Job）**：起源于批处理系统，用户在一次计算过程中或者事务处理过程中，要求计算机所作工作的集合。一个作业可由多个进程组成。
 
 **顺序执行的程序具有**：顺序性、**封闭性**、**可再现性**
 
 **并发执行的程序具有**：间断性、无封闭性、不可再现性。
 
+**进程的特征**：
+
+- 动态性（最基本特征）
+- 并发性
+- 独立性（资源分配、调度的独立单位）
+- 异步性（不可预知的速度推进，可能导致结果的不确定性）
+- 结构性。
+
 ### 进程
 
 **进程实体**：$\textnormal{\footnotesize 进程实体（进程映像）} = \{\textnormal{\footnotesize 程序段（程序代码）}, \textnormal{\footnotesize 数据段（程序运行时数据）}, PCB\}$
 
-**PCB（Process Control Block）**：常驻内存，$PCB = \{\textnormal{\footnotesize 进程标识符}, \textnormal{\footnotesize 处理机状态信息}, \textnormal{\footnotesize 进程调度信息}, \textnormal{\footnotesize 进程控制信息}\}$
-
-**进程**：进程实体的运行过程，是系统进行资源分配和调度的独立单位。**创建进程**就是创建进程实体中的PCB。**撤销进程**就是撤销进程实体中的PCB。
-
-**进程的特征**：动态性（最基本特征）、并发性、独立性（资源分配、调度的独立单位）、异步性（不可预知的速度推进，可能导致结果的不确定性）、结构性。
+**PCB（Process Control Block）**：常驻内存，$PCB = \{\textnormal{\footnotesize 进程标识符}, \textnormal{\footnotesize 处理机状态信息}, \textnormal{\footnotesize 进程调度信息}, \textnormal{\footnotesize 进程控制信息}\}$，**创建进程**就是创建进程实体中的PCB。**撤销进程**就是撤销进程实体中的PCB。
 
 #### 进程的状态
 
