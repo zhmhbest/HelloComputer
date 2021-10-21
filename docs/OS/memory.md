@@ -1,13 +1,21 @@
 
 **硬件结构**：寄存器、高速缓存、内存
 
-**程序装入方式**：绝对装入(编译时产生绝对地址)、可重定位装入（装入时将逻辑地址转换为物理地址）、动态运行时装入（运行时将逻辑地址转换为物理地址，需设置重定位寄存器）
-
 **内存保护**：上下限寄存器、限长寄存器（届地址寄存器、重定位寄存器）
 
 **覆盖技术**：按照逻辑，让不能同时被访问的程序段共享同一个覆盖区。
 
 **交换技术**：内存紧张时，将内存中某些进程暂时换出到外存交换区（PCB则常驻内存）。
+
+**内存碎片**：不能被使用的内存区域。
+
+### 程序装入方式
+
+|           装入方式 | 可装入内存中不同位置 | 可在内存中移动 | 说明                                                 |
+| -----------------: | :------------------: | :------------: | ---------------------------------------------------- |
+|       **绝对装入** |          ×           |       ×        | 程序中的逻辑地址即为物理地址                         |
+|   **可重定位装入** |          √           |       ×        | 装入时将逻辑地址转换为物理地址                       |
+| **动态运行时装入** |          √           |       √        | 运行时将逻辑地址转换为物理地址<br>需设置重定位寄存器 |
 
 ### 连续内存分配
 
@@ -56,11 +64,25 @@
 
 #### 地址转换
 
-- $\textnormal{\footnotesize 页号} = \left\lfloor{\dfrac{\textnormal{\footnotesize 逻辑地址}}{\textnormal{\footnotesize 页面长度}}}\right\rfloor$，并检查页号是否合法
-- $\textnormal{\footnotesize 页内偏移量} = \textnormal{\footnotesize 逻辑地址} {\rm \ mod \ } \textnormal{\footnotesize 页面长度}$
+- $\textnormal{\footnotesize 逻辑地址} = \textnormal{\footnotesize 页号} × \textnormal{\footnotesize 页面长度} + \textnormal{\footnotesize 页面偏移量}$
+  - $\textnormal{\footnotesize 页号} = \left\lfloor{\dfrac{\textnormal{\footnotesize 逻辑地址}}{\textnormal{\footnotesize 页面长度}}}\right\rfloor$，并检查页号是否合法
+  - $\textnormal{\footnotesize 页内偏移量} = \textnormal{\footnotesize 逻辑地址} {\rm \ mod \ } \textnormal{\footnotesize 页面长度}$
 - 查询页表：$\textnormal{\footnotesize 页号} \xrightarrow[]{(\textnormal{\footnotesize 页号}, \textnormal{\footnotesize 块号})} \textnormal{\footnotesize 块号}$
 - $\textnormal{\footnotesize 起始地址} = \textnormal{\footnotesize 块号} × \textnormal{\footnotesize 块大小}$
 - $\textnormal{\footnotesize 物理地址} = \textnormal{\footnotesize 起始地址} + \textnormal{\footnotesize 页内偏移量}$
+
+**例**：页面长度=`1KB = 0x400`，页表如下，问逻辑地址`0A1F(H)`对应的物理地址
+
+| 页号 | 块号 |
+| ---: | :--- |
+|    0 | 1    |
+|    1 | 5    |
+|    2 | 3    |
+|    3 | 7    |
+|    4 | 2    |
+
+- `0x0A1F = 2 × 0x400 + 0x21F`，即页号为`2`（块号为`3`），页面偏移量为`0x21F`。
+- 物理地址为`3 × 0x400 + 0x21F = 0xE1F`
 
 ### 分段存储管理
 
@@ -81,6 +103,10 @@
 ### 虚拟内存
 
 从逻辑上扩充内存容量，程序不需要全部装入内存即可允许，运行时根据需要动态调入数据，内存不够时换出一部分数据。
+
+**虚拟内存的最大容量**：由系统的地址结构和外存空间大小决定。
+
+**虚拟内存组成**：主存、辅存、管理单元、管理软件。
 
 **局部性原理**：时间局部性（执行过的指令可能再次执行，访问过的数据可能再次被访问）、空间局部性（访问过的存储单元其附件的单元也可能被访问）
 
