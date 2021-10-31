@@ -5,44 +5,265 @@
 
 [TOC]
 
-## 概述
+## 软件工程概述
 
-### 软件的定义
+### 软件的特性
 
-软件是计算机系统中与硬件相互依存的另一部分，它包括程序、数据及相关文档的完整集合。其中，程序是按事先设计的功能和性能要求执行的指令序列；数据是使程序能正常操纵信息的数据结构；文档是与程序开发、维护和使用有关的图文材料。
+形态、智能、开发、质量、生产、管理、环境、维护、废弃、应用。
 
-### 软件生存周期与软件过程
+### 软件分类
 
-- 软件计划与可行性研究（问题定义、可行性研究）
-- 需求分析
-- 软件设计（概要设计和详细设计）
-- 编码
-- 软件测试
-- 运行与维护
+系统软件、应用软件、支持软件、可复用软件。
 
-## 软件开发模型
+### 软件生存周期
 
-|                                       模型 | 说明                                                         |
-| -----------------------------------------: | :----------------------------------------------------------- |
-|            瀑布模型<br>（Waterfall Model） | 开发过程是线性的，易于管理，过早的延迟会拖延整个项目，不适合需求模糊的系统 |
-| 快速原型模型<br/>（Rapid Prototype Model） | “逼真”的原型可以使用户迅速作出反馈，防止舍不得抛弃           |
-|                      V模型<br/>（V Model） | 早期测试介入，每个开发阶段都有一个并行测试阶段               |
-|         增量模型<br/>（Incremental Model） | 把待开发的软件系统模块化，可在不知道所有需求的情况下开始开发 |
-|              螺旋模型<br/>（Spiral Model） | 快速原型模型+瀑布模型，引入了风险分析，适合于大型复杂的系统  |
-|            演化模型<br/>（Fountain Model） | 迭代开发方法，适用于对软件需求缺乏准确认识的情况             |
-|            喷泉模型<br/>（Fountain Model） | 描述面向对象的软件开发过程                                   |
+问题定义与可行性研究、需求分析、软件设计、程序编码和单元测试、集成测试和系统测试、软件运行和维护。
 
-<img alt="Waterfall Model" src="./images/SDLC/W.png" style="width:40%"/>
+### 软件生存期模型
 
-<img alt="V Model" src="./images/SDLC/V.png" style="width:40%"/>
+|                                       模型 | 特点                                                         | 优点                 | 缺点                                                     |
+| -----------------------------------------: | :----------------------------------------------------------- | -------------------- | :------------------------------------------------------- |
+|            瀑布模型<br>（Waterfall Model） | 1.阶段间具有顺序性和依赖性<br>2.推迟实现的观点<br>3.质量保证的观点 | 强迫规范化           | 1.只适用于需求已确定的情况<br>2.可能不能真正满足用户需求 |
+| 快速原型模型<br/>（Rapid Prototype Model） | 快速建立可运行程序                                           | 满足用户真实需求     |                                                          |
+|         增量模型<br/>（Incremental Model） | 不知道所有需求即可开始                                       | 短时间核心交付       | 须不破坏已开发的模块                                     |
+|              螺旋模型<br/>（Spiral Model） | **快速原型模型**加**瀑布模型**<br/>并引入了风险分析          | 软件质量作为重要目标 | 开发人员需有丰富的风险评估经验                           |
+|            喷泉模型<br/>（Fountain Model） | 面向对象的软件开发过程                                       |                      |                                                          |
 
-<img alt="Spiral Model" src="./images/SDLC/S.png" style="width:40%"/>
+## 面向对象开发
 
-<img alt="Incremental Model" src="./images/SDLC/I.png" style="width:40%"/>
+封装、继承、多态
 
-## 设计模式
+### UML
 
-### 软件设计原则（SOLID）
+#### UML事物
+
+- 结构事物：类、主动类、接口、对象、用例、参与者、协作、构件、节点
+- 行为事物：交互、状态机
+- 分组事物：包
+- 注释事物
+
+#### UML关系
+
+|                    关系 |        | 说明                           |
+| ----------------------: | :----: | :----------------------------- |
+|  **依赖（Dependency）** | `..>`  | A变化会影响B       |
+| **双向关联（Association）** | `--`  | A和B的连接关系  |
+| **单向关联（Association）** | `-->`  | A和B的连接关系 |
+||||
+| **共享聚合（Shared Aggregation）** | `--o`  | 静态成员   |
+| **复合聚合（Composition Aggregation）** | `--*`  | 成员变量                       |
+||||
+| **实现（Implement）** | `..|>` | 实现接口               |
+| **泛化（Inheritance）** | `--|>` | 继承父类    |
+||||
+|         **Dashed Link** |  `..`  |                                |
+
+```mermaid
+classDiagram
+    direction
+    A1 ..> B1 : 依赖
+    A2 --  B2 : 双向关联
+    A3 --> B3 : 单向关联
+    %%
+    A4 --o B4 : 共享聚合
+    A5 --* B5 : 复合聚合
+    %%
+    A6 ..|> B6 : 实现接口
+    A7 --|> B7 : 继承父类
+    %%
+    A8 --|> B8 : Dashed Link
+```
+
+| `Cardinality` | 说明            |
+| ------------: | --------------- |
+|           `1` | *Only 1*        |
+|           `n` | *Some*（$n>1$） |
+|           `*` | *Many*          |
+|        `0..1` | *Zero or One*   |
+|        `0..*` | *Zero or More*  |
+|        `1..*` | *One or More*   |
+|        `0..n` | *Zero or Some*  |
+|        `1..n` | *One or Some*   |
+
+```mermaid
+classDiagram
+    %% 1对1
+    Student "1" --> "1" Seat
+
+    %% 1对多
+    Student "1" --> "1..*" Course
+
+    %% 1对0 或 1对1
+    Student "1" --> "0..1" Glasses
+
+    %% 1对0 或 1对一些
+    Student "1" --> "0..n" Reward
+
+    %% 银河中有很多星星
+    Galaxy --> "many" Star : Contains
+```
+
+```txt
+classDiagram
+    %% 1对1
+    Student "1" --> "1" Seat
+
+    %% 1对多
+    Student "1" --> "1..*" Course
+
+    %% 1对0 或 1对1
+    Student "1" --> "0..1" Glasses
+
+    %% 1对0 或 1对一些
+    Student "1" --> "0..n" Reward
+
+    %% 银河中有很多星星
+    Galaxy --> "many" Star : Contains
+```
+
+#### 类图
+
+**成员可见性**：
+
+```mermaid
+classDiagram
+    class Object {
+        Type memberDefault
+        ~Type memberPackageOrInternal
+        -Type memberPrivate
+        #Type memberProtected
+        +Type memberPublic
+        methorStatic()$
+        methorAbstract()*
+    }
+```
+
+```txt
+classDiagram
+    class Object {
+        Type memberDefault
+        ~Type memberPackageOrInternal
+        -Type memberPrivate
+        #Type memberProtected
+        +Type memberPublic
+        methorStatic()$
+        methorAbstract()*
+    }
+```
+
+**注解**：
+
+```mermaid
+classDiagram
+    class Runnable {
+        <<Interface>>
+    }
+    class Animal {
+        <<Abstract>>
+    }
+    class HttpService {
+        <<Service>>
+    }
+    class Color{
+        <<Enumeration>>
+        RED
+        BLUE
+        GREEN
+        WHITE
+        BLACK
+    }
+```
+
+```txt
+classDiagram
+    class Runnable {
+        <<Interface>>
+    }
+    class Animal {
+        <<Abstract>>
+    }
+    class HttpService {
+        <<Service>>
+    }
+    class Color{
+        <<Enumeration>>
+        RED
+        BLUE
+        GREEN
+        WHITE
+        BLACK
+    }
+```
+
+**示例**：
+
+```mermaid
+classDiagram
+    class Runnable {
+        <<Interface>>
+        +run()* void
+    }
+
+    class Animal {
+        #int age
+    }
+    Animal: +setAge(int age) void
+    Animal: +getAge() int
+
+    class Mammal {
+        #bool gender
+        +setGender(bool gender) void
+        +getGender() bool
+        +run() void
+    }
+
+    class Human {
+        #String name
+        +setName(String name) void
+        +getName() String
+        +run() void
+    }
+
+    Animal <|-- Mammal
+    Runnable <|.. Mammal
+    Mammal <|-- Human
+```
+
+```txt
+classDiagram
+    class Runnable {
+        <<Interface>>
+        +run()* void
+    }
+
+    class Animal {
+        #int age
+    }
+    Animal: +setAge(int age) void
+    Animal: +getAge() int
+
+    class Mammal {
+        #bool gender
+        +setGender(bool gender) void
+        +getGender() bool
+        +run() void
+    }
+
+    class Human {
+        #String name
+        +setName(String name) void
+        +getName() String
+        +run() void
+    }
+
+    Animal <|-- Mammal
+    Runnable <|.. Mammal
+    Mammal <|-- Human
+```
+
+### 设计模式
+
+#### 软件设计原则（SOLID）
 
 |                                             设计原则 | 说明                                                         |
 | ---------------------------------------------------: | :----------------------------------------------------------- |
@@ -54,7 +275,7 @@
 |  依赖倒置原则<br/>（Dependence Inversion Principle） | 上层模块不应该依赖底层模块，它们都应该依赖于抽象、抽象不应该依赖于细节，细节应该依赖于抽象。 |
 |       合成复用原则<br/>（Composite Reuse Principle） | 尽量使用对象组合/聚合，而不是继承关系达到软件复用的目的。    |
 
-### 创建型模式（Creational Pattern）
+#### 创建型模式（Creational Pattern）
 
 |             模式 | 说明                                     |
 | ---------------: | :--------------------------------------- |
@@ -108,7 +329,7 @@ public class Main {
 }
 ```
 
-### 结构型模式（Structural Pattern）
+#### 结构型模式（Structural Pattern）
 
 | 模式           | 说明                                                         |
 | -------------: | :----------------------------------------------------------- |
@@ -120,7 +341,7 @@ public class Main {
 | **组合模式**   | 把一组相似的对象当作一个单一的对象，创建了对象组的树形结构。 |
 | **享元模式**   | 减少创建对象的数量，以减少内存占用和提高性能。               |
 
-### 行为型模式（Behavioral Pattern）
+#### 行为型模式（Behavioral Pattern）
 
 |           模式 | 说明                                                         |
 | -------------: | :----------------------------------------------------------- |
@@ -136,206 +357,7 @@ public class Main {
 |   **中介模式** | 提供了一个中介类，用来降低多个对象和类之间的通信复杂性。     |
 | **解释器模式** | 提供了评估语言的语法或表达式的方式。                         |
 
-#### 策略模式和模板模式
-
 | 模式 | 说明                                         | 优点                     | 缺点                                               |
 | ---: | -------------------------------------------- | :----------------------- | :------------------------------------------------- |
 | 策略 | 提供抽象接口，由具体实现类提供不同算法       | 横向扩展性好，灵活性高   | 客户端需要知道全部策略，若策略过多会导致复杂度升高 |
 | 模板 | 对同一个算法的不同细节进行抽象提供不同的实现 | 可维护性好，纵向扩展性好 | 耦合性较高，子类无法影响父类公用模块代码           |
-
-## UML
-
-### Hello
-
-```mermaid
-classDiagram
-    %% 设置图表方向
-    direction LR
-
-    %% 定义对象
-    class Thread {
-        int threadId
-        run() void
-    }
-
-    %% 补充对象成员
-    Thread: main(String[] args) void
-```
-
-### Visibility
-
-```mermaid
-classDiagram
-    class Object {
-        Type memberDefault
-        +Type memberPublic
-        -Type memberPrivate
-        #Type memberProtected
-        ~Type memberPackageOrInternal
-        methorStatic()$
-        methorAbstract()*
-    }
-```
-
-### Annotations
-
-```mermaid
-classDiagram
-    class Runnable {
-        <<Interface>>
-    }
-    class Animal {
-        <<Abstract>>
-    }
-    class HttpService {
-        <<Service>>
-    }
-    class Color{
-        <<Enumeration>>
-        RED
-        BLUE
-        GREEN
-        WHITE
-        BLACK
-    }
-```
-
-### Relationship & Relations
-
-`ObjectA "<CardinalityA>" <Arrow> "<CardinalityB>" ObjectB`
-
-|                    关系 | `Arrow` | 说明                           |
-| ----------------------: | :----: | :----------------------------- |
-| **泛化（Inheritance）** | `--|>` | 面向对象语言中的继承关系       |
-| **实现（Realization）** | `..|>` | 继承一个抽象类                 |
-| **组合（Composition）** | `--*`  | 成员变量                       |
-| **聚合（Aggregation）** | `--o`  | 是整体与部分的关系             |
-| **关联（Association）** | `-->`  | 是整体与部分的关系             |
-|  **依赖（Dependency）** | `..>`  | 一个类的实现需要另一个类的协助 |
-|          **Solid Link** |  `--`  |                                |
-|         **Dashed Link** |  `..`  |                                |
-
-```mermaid
-classDiagram
-    classAA --|> classA : Inheritance
-    classBB ..|> classB : Realization
-    classCC --*  classC : Composition
-    classDD --o  classD : Aggregation
-    classEE -->  classE : Association
-    classFF ..>  classF : Dependency
-    classGG  --  classG : Link(Solid)
-    classHH  ..  classH : Link(Dashed)
-```
-
-```txt
-classDiagram
-    classAA --|> classA : Inheritance
-    classBB ..|> classB : Realization
-    classCC --*  classC : Composition
-    classDD --o  classD : Aggregation
-    classEE -->  classE : Association
-    classFF ..>  classF : Dependency
-    classGG  --  classG : Link(Solid)
-    classHH  ..  classH : Link(Dashed)
-```
-
-| `Cardinality` | 说明            |
-| ------------: | --------------- |
-|           `1` | *Only 1*        |
-|           `n` | *Some*（$n>1$） |
-|           `*` | *Many*          |
-|        `0..1` | *Zero or One*   |
-|        `0..*` | *Zero or More*  |
-|        `1..*` | *One or More*   |
-|        `0..n` | *Zero or Some*  |
-|        `1..n` | *One or Some*   |
-
-```mermaid
-classDiagram
-    %% 1对1
-    Student "1" --> "1" Seat
-
-    %% 1对多
-    Student "1" --> "1..*" Course
-
-    %% 1对0 或 1对1
-    Student "1" --> "0..1" Glasses
-
-    %% 1对0 或 1对一些
-    Student "1" --> "0..n" Reward
-
-    %% 银河中有很多星星
-    Galaxy --> "many" Star : Contains
-```
-
-```txt
-classDiagram
-    %% 1对1
-    Student "1" --> "1" Seat
-
-    %% 1对多
-    Student "1" --> "1..*" Course
-
-    %% 1对0 或 1对1
-    Student "1" --> "0..1" Glasses
-
-    %% 1对0 或 1对一些
-    Student "1" --> "0..n" Reward
-
-    %% 银河中有很多星星
-    Galaxy --> "many" Star : Contains
-```
-
-### Demonstrate
-
-```mermaid
-classDiagram
-    class Animal {
-        <<Abstract>>
-        #int age
-        #bool gender
-        +setAge(int age) void
-        +getAge() int
-        +setGender(bool gender) void
-        +getGender() bool
-        +run()* void
-    }
-    class Duck {
-        +run() void
-    }
-    class Fish {
-        +run() void
-    }
-    class Rabbit {
-        +run() void
-    }
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Rabbit
-```
-
-```txt
-classDiagram
-    class Animal {
-        <<Abstract>>
-        #int age
-        #bool gender
-        +setAge(int age) void
-        +getAge() int
-        +setGender(bool gender) void
-        +getGender() bool
-        +run()* void
-    }
-    class Duck {
-        +run() void
-    }
-    class Fish {
-        +run() void
-    }
-    class Rabbit {
-        +run() void
-    }
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Rabbit
-```
