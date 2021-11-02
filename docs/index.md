@@ -103,9 +103,9 @@
 
 ### [运算](./Compose/index.html#运算)
 
-### [存储器](./Compose/index.html#存储器)
-
 ### [指令系统](./Compose/index.html#指令系统)
+
+### [存储器](./Compose/index.html#存储器)
 
 ### [中央处理器](./Compose/index.html#中央处理器)
 

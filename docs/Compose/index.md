@@ -13,13 +13,13 @@
 
 @import "operation.md"
 
-## 存储器
-
-@import "storage.md"
-
 ## 指令系统
 
 @import "instruction.md"
+
+## 存储器
+
+@import "storage.md"
 
 ## 中央处理器
 
