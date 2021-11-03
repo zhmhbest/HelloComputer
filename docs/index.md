@@ -103,13 +103,15 @@
 
 ### [运算](./Compose/index.html#运算)
 
-### [指令系统](./Compose/index.html#指令系统)
+### [指令](./Compose/index.html#指令)
 
 ### [存储器](./Compose/index.html#存储器)
 
-### [中央处理器](./Compose/index.html#中央处理器)
+### [处理器](./Compose/index.html#处理器)
 
-### [总线系统](./Compose/index.html#总线系统)
+### [总线](./Compose/index.html#总线)
+
+### [外设](./Compose/index.html#外设)
 
 ## [内排序算法](./InnerSorting/index.html)
 

@@ -13,7 +13,7 @@
 
 @import "operation.md"
 
-## 指令系统
+## 指令
 
 @import "instruction.md"
 
@@ -21,10 +21,14 @@
 
 @import "storage.md"
 
-## 中央处理器
+## 处理器
 
 @import "cpu.md"
 
-## 总线系统
+## 总线
 
 @import "bus.md"
+
+## 外设
+
+@import "peripheral.md"
