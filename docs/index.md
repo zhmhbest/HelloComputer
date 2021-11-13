@@ -113,18 +113,18 @@
 
 ### [外设](./Compose/index.html#外设)
 
-## [内排序算法](./InnerSorting/index.html)
+## [数据结构](./DataStruct/index.html)
 
-### [直接插入排序](./InnerSorting/index.html#直接插入排序)
+### [线性表](./DataStruct/index.html#线性表)
 
-### [折半插入排序](./InnerSorting/index.html#折半插入排序)
+### [串](./DataStruct/index.html#串)
 
-### [简单选择排序](./InnerSorting/index.html#简单选择排序)
+### [树](./DataStruct/index.html#树)
 
-### [堆排序](./InnerSorting/index.html#堆排序)
+### [图](./DataStruct/index.html#图)
 
-### [冒泡排序](./InnerSorting/index.html#冒泡排序)
+### [查找](./DataStruct/index.html#查找)
 
-### [快速排序](./InnerSorting/index.html#快速排序)
+### [内排序](./DataStruct/index.html#内排序)
 
-## [Java八股](./StereotypedJava/index.html)
+## [Java](./Java/index.html)
