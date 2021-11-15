@@ -194,7 +194,9 @@ ElemType deQueue(CircularQueue* S) {
  * 第一个位置存储字符长度
  */
 typedef unsigned char SString[256];
+```
 
+```cpp
 /**
  * 堆分配存储
  */
@@ -202,7 +204,9 @@ typedef struct {
     unsigned char* chs;
     unsigned int length;
 } HString;
+```
 
+```cpp
 /**
  * 块链存储
  */
@@ -232,15 +236,16 @@ int indexOf(const char* mainStr, const char* findStr) {
     }
     return j == M ? i - M : -1;
 }
+int main() {
+    printf("%d=8\n", indexOf("Hello, world!", "or"));
+}
+```
 
+```cpp
 /**
  * KMP算法
  */
 // 待补充
-
-int main() {
-    printf("%d=8\n", indexOf("Hello, world!", "or"));
-}
 ```
 
 ## 树
@@ -296,7 +301,9 @@ graph TB
  * 顺序存储
  */
 int bt1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+```
 
+```cpp
 /**
  * 链式存储
  */
@@ -360,7 +367,9 @@ typedef struct {
     int root; // 根在数组中的下标
     int size; // 结点数
 } ParentTree;
+```
 
+```cpp
 /**
  * 孩子表示法
  */
@@ -377,7 +386,9 @@ typedef struct{
     int root; // 根在数组中的下标
     int size; // 结点数
 } ChildTree;
+```
 
+```cpp
 /**
  * 孩子兄弟表示法
  */
@@ -412,26 +423,177 @@ typedef struct ChildSiblingTreeNode {
 
 ### 图的表示法
 
+邻接矩阵、邻接表、十字链表、邻接多重表
+
 ```cpp
 /**
  * 邻接矩阵
  */
+enum GraphKind{ DG, DN, UDG, UDN }; // 有向图, 有向网, 无向图, 无向网
+struct VexNode {
+    ElemType data; // 顶点信息
+};
+struct ArcCell {
+    InoType info;  // 弧的信息
+};
 typedef struct {
-    VertexType vexs[];
-    AdjMatrix arcs;
-    int vexnum;
-    int arcnum;
-    GraphKind kind;
+    struct VexNode vexs[MAX_VERTEX_NUM];                 // 顶点向量
+    struct ArcCell arcs[MAX_VERTEX_NUM][MAX_VERTEX_NUM]; // 邻接矩阵
+    int vexnum; // 顶点数
+    int arcnum; // 弧数量
+    enum GraphKind kind; // 图的种类
 } MGraph;
+```
+
+```cpp
+/**
+ * 邻接表
+ */
+struct ArcCell {
+    int adjvex;             // 弧所指向顶点位置
+    struct ArcCell* next;   // 下一条弧
+    InoType info;           // 弧所含信息
+};
+struct VexNode {
+    ElemType data;
+    struct ArcCell* first;  // 该节点所有的弧
+};
+typedef struct {
+    struct VexNode vexs[MAX_VERTEX_NUM];
+    int vexnum; // 顶点数
+    int arcnum; // 弧数量
+    enum GraphKind kind; // 图的种类
+} ALGraph;
 ```
 
 ### 图的遍历
 
 ```cpp
-
+/**
+ * DFS
+ */
+// 待补充
 ```
 
+```cpp
+/**
+ * BFS
+ */
+// 待补充
+```
+
+### 图的连通性
+
+**连通图（无向图）**：任意两点有路径。
+
+**连通分量（无向图）**：图的连通子图，连通图的连通分量只有自身。
+
+**强连通图（有向图）**：任意两点可以互相到达。
+
+**强连通分量（有向图）**：有向图的强连通子图，强连通图的强连通分量只有自身。
+
+![graph](images/graph.png)
+
+#### 最小生成树
+
+构造联通网的最小代价生成树。
+
+**Prim**：
+
+**Kruskal**：
+
+### 有向无环图（DAG）
+
+#### 拓扑排序——AOV网
+
+待补充
+
+#### 关键路径——AOE网
+
+待补充
+
+#### 最短路径
+
+**Floyd**：
+
+**Dijkstra**：
+
+## 动态存储
+
+### 分配方法
+
+- 首次拟合
+- 最佳拟合
+- 最差拟合
+
+### 边界标识
+
+- 可利用空间表结构
+- 分配算法
+- 回收算法
+
+![BTM](images/BTM.png)
+
+### 伙伴协同
+
+无论占用块还是空闲块，其大小均为$2^{N^+}$大小
+
 ## 查找
+
+### 查找方法
+
+顺序查找、折半查找、分块查找
+
+```cpp
+/**
+ * 折半查找
+ */
+int binarySearch(const int A[], const int N, const int K) {
+    int l = 0, r = N - 1;
+    while (l <= r) {
+        int m = (l + r) / 2;
+        if (A[m] == K) {
+            return m;
+        } else if (A[m] < K) {
+            l = m + 1;
+        } else if (A[m] > K) {
+            r = m - 1;
+        }
+    }
+    return -1;
+}
+```
+
+### 查找结构
+
+#### 平衡二叉树（AVL）
+
+@import "src/avl.c"
+
+#### B树
+
+- 每个结点最多有$m$棵子树
+- 若根不是叶子，则根至少有$2$棵子树
+- 除根结点外，所有非叶子结点至少有$\lceil{m/2}\rceil$棵子树
+- 所有叶子结点位于同一层次
+- 所有非叶结点包含信息$(n,p_0,k_1,p_1,k_2,p_2,\cdots,k_n,p_n)$
+
+```cpp
+typedef struct BTreeNode {
+    int num;                    // 该结点关键字个数
+    KeyType key[EACH_KEY_SIZE]; // 关键字信息
+    struct BTreeNode *children[EACH_KEY_SIZE];
+    struct BTreeNode *parent;
+} BTreeNode, *BTree;
+```
+
+![B_tree](images/B_tree.png)
+
+#### Hash表
+
+**构造方法**：直接定址、数字分析、平方取中、折叠、除留余数。
+
+**处理冲突方法**：开放地址、再Hash、溢出区、链地址
 
 ## [内排序](./InnerSorting/index.html)
 

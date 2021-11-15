@@ -123,6 +123,8 @@
 
 ### [图](./DataStruct/index.html#图)
 
+### [动态存储](./DataStruct/index.html#动态存储)
+
 ### [查找](./DataStruct/index.html#查找)
 
 ### [内排序](./DataStruct/index.html#内排序)
