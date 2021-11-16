@@ -498,25 +498,229 @@ typedef struct {
 
 构造联通网的最小代价生成树。
 
+```mermaid
+graph LR
+    S((S)); A((A)); B((B)); C((C)); D((D)); T((T));
+    S-."7".-A-."6".-B;
+    S-."8".-C-."3".-D;
+    B-."5".-T;
+    D-."2".-T;
+    A-."3".-C;
+    B-."2".-D;
+    B-."4".-C;
+```
+
 **Prim**：
 
+- 任取一个点作为已够部分；
+- 将剩余点看成一个整体；
+- 连接“剩余”与“已构”代价最小的一条边；
+- 重复上述步骤直到构成一个完整的整体。
+
+```mermaid
+graph LR
+    S((S)); A((A)); B((B)); C((C)); D((D)); T((T));
+    S=="7"===A-."6".-B;
+    S-."8".-C=="3"===D;
+    B-."5".-T;
+    D=="2"===T;
+    A=="3"===C;
+    B=="2"===D;
+    B-."4".-C;
+```
+
+7、3、3、2、2
+
 **Kruskal**：
+
+- 画出所有顶点；
+- 从边集中选出未用未排除的最小的一条加入；
+  - 若该边不能连通新的两棵树，则换选次小或同权其它的边；
+- 重复上述步骤，直到选出$n-1$条边停止。
+
+```mermaid
+graph LR
+    S((S)); A((A)); B((B)); C((C)); D((D)); T((T));
+    S=="7"===A-."6".-B;
+    S-."8".-C=="3"===D;
+    B-."5".-T;
+    D=="2"===T;
+    A=="3"===C;
+    B=="2"===D;
+    B-."4".-C;
+```
+
+2、2、3、3、7
 
 ### 有向无环图（DAG）
 
 #### 拓扑排序——AOV网
 
-待补充
+拓扑排序通常用来“排序”具有依赖关系的任务。
+
+- 从有向图中找到一个没有前驱的点（入度为0）并输出，拿掉以该点为起点的所有边；
+- 重复上述步骤，直到没有元素，或没有入度为0的点（此时必定有环）。
+
+![eg_aov](images/eg_aov.png)
+
+1、2、4、3、5
 
 #### 关键路径——AOE网
 
-待补充
+解决工程完成需要最短时间问题。
+
+**源点**：入度为0的点。
+
+**汇点**：出度为0的点。
+
+**关键路径**：从**源点**到**汇点**最大长度的路径。
+
+$e$：活动最早开始时间。
+
+$l$：活动最晚开始时间。
+
+$V_e$：事件最早发生时间。
+
+$V_l$：事件最晚发生时间。
+
+![eg_aoe](images/eg_aoe.png)
+
+|  顶点 | $V_e$ | $Path$                                     | $V_l$              |
+| ----: | :---: | :----------------------------------------- | :----------------- |
+| $V_2$ |  $6$  | $a_1$                                      | $V_e(5)-a_4=6$     |
+| $V_3$ |  $4$  | $a_2$                                      | $V_e(5)-a_5=6$     |
+| $V_4$ |  $5$  | $a_3$                                      | $V_e(8)-a_6-a_9=8$ |
+| $V_5$ |  $7$  | $a_1,a_4$                                  | $7$                |
+| $V_6$ |  $7$  | $a_3,a_6$                                  | $V_e(8)-a_9=10$    |
+| $V_7$ | $16$  | $a_1,a_4,a_7$                              | $16$               |
+| $V_8$ | $14$  | $a_1,a_4,a_8$                              | $14$               |
+| $V_9$ | $18$  | $a_1,a_4,a_7,a_{10}$或$a_1,a_4,a_8,a_{11}$ | $18$               |
 
 #### 最短路径
 
+**Dijkstra**：
+
+![eg_dijkstra](images/eg_dijkstra.png)
+
+$\begin{array}{c}
+    & \begin{array}{c}
+        V_0  & V_1 & V_2 & V_3 & V_4 & V_5
+    \end{array}
+\\
+    \begin{array}{c}
+        V_0 \\ V_1 \\ V_2 \\ V_3 \\ V_4 \\ V_5
+    \end{array}
+    & \left[\begin{array}{c}
+        0  & ∞  & 10 & ∞  & 30 & 100
+    \\  ∞  & 0  & 5  & ∞  & ∞  & ∞
+    \\  ∞  & ∞  & 0  & 50 & ∞  & ∞
+    \\  ∞  & ∞  & ∞  & 0  & ∞  & 10
+    \\  ∞  & ∞  & ∞  & 20 & 0  & 60
+    \\  ∞  & ∞  & ∞  & ∞  & ∞  & 0
+    \end{array}\right]
+\end{array}$
+
+|  终点 |        直达        |       加入$V_2$       |         加入$V_3$         |         加入$V_4$         | 加入$V_5$ | 最短路径          |
+| ----: | :----------------: | :-------------------: | :-----------------------: | :-----------------------: | :-------: | :---------------- |
+| $V_1$ |        $∞$         |          $∞$          |            $∞$            |            $∞$            |    $∞$    |                   |
+| $V_2$ | $10$<br>$V_0,V_2$  |         $10$          |           $10$            |           $10$            |   $10$    | $V_0,V_2$         |
+| $V_3$ |        $∞$         | $60$<br>$V_0,V_2,V_3$ |           $60$            |   $50$<br>$V_0,V_4,V_3$   |   $50$    | $V_0,V_4,V_3$     |
+| $V_4$ | $30$<br>$V_0,V_4$  |         $30$          |           $30$            |           $30$            |   $30$    | $V_0,V_4$         |
+| $V_5$ | $10$0<br>$V_0,V_5$ |         $100$         | $70$<br>$V_0,V_2,V_3,V_5$ | $60$<br>$V_0,V_4,V_3,V_5$ |   $60$    | $V_0,V_4,V_3,V_5$ |
+
 **Floyd**：
 
-**Dijkstra**：
+![eg_floyd](images/eg_floyd.png)
+
+$\begin{array}{c}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+\\
+    \begin{array}{c}
+        A \\ B \\ C
+    \end{array}
+    & \left[\begin{array}{c}
+        0  & 4  & 11
+    \\  6  & 0  & 2
+    \\  3  & ∞  & 0
+    \end{array}\right]
+\end{array}$
+
+加入$A$，有`B->A->C = 17`、`C->A->B = 7`
+
+$\begin{array}{c}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+\\
+    \begin{array}{c}
+        A \\ B \\ C
+    \end{array}
+    & \left[\begin{array}{c}
+           & 4  & 11
+    \\  6  &    & 2
+    \\  3  & \bold{7}  &
+    \end{array}\right]
+    & \left[\begin{array}{c}
+           & AB  & AC
+    \\  BA &     & BC
+    \\  CA & CAB &
+    \end{array}\right]
+\end{array}$
+
+加入$B$，有`A->B->C = 6`
+
+$\begin{array}{c}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+\\
+    \begin{array}{c}
+        A \\ B \\ C
+    \end{array}
+    & \left[\begin{array}{c}
+           & 4  & \bold{6}
+    \\  6  &    & 2
+    \\  3  & 7  &
+    \end{array}\right]
+    & \left[\begin{array}{c}
+           & AB  & ABC
+    \\  BA &     & BC
+    \\  CA & CAB &
+    \end{array}\right]
+\end{array}$
+
+加入$C$，有`B->C->A = 5`
+
+$\begin{array}{c}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+    & \begin{array}{c}
+       A & B & C
+    \end{array}
+\\
+    \begin{array}{c}
+        A \\ B \\ C
+    \end{array}
+    & \left[\begin{array}{c}
+           & 4  & 6
+    \\  \bold{5}  &    & 2
+    \\  3  & 7  &
+    \end{array}\right]
+    & \left[\begin{array}{c}
+            & AB  & ABC
+    \\  BCA &     & BC
+    \\  CA  & CAB &
+    \end{array}\right]
+\end{array}$
 
 ## 动态存储
 
