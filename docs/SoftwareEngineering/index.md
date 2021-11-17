@@ -98,7 +98,7 @@ $Z(t) = \dfrac{f(t)}{R(t)}$
 
 **失效强度$λ(t)$**：
 
-$λ(t) = \dfrac{{\rm d}u(t)}{{\rm d}t}$
+$λ(t) = \dfrac{ {\rm d}u(t) }{ {\rm d}t }$
 
 - $u(t)$：为随机变量$N(t)$的均值
 
