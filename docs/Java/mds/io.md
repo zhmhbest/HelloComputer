@@ -1,14 +1,15 @@
-package org.example.base;
+<!-- ### IO -->
 
+```java
 import java.io.*;
 
-public class HelloIOStream {
+public class Main {
     public static void main(String[] args) throws IOException {
         // 标准输出流
         PrintStream writer = System.out;
 
         // 输出内容到缓冲
-        ByteArrayOutputStream os = new ByteArrayOutputStream(128);
+        ByteArrayOutputStream os = new ByteArrayOutputStream(64);
         OutputStreamWriter osw = new OutputStreamWriter(os);
         osw.write("Hello!\n");
         osw.write("This is Stream.\n");
@@ -20,14 +21,14 @@ public class HelloIOStream {
         writer.println(new String(data));
 
         // 读取内容到缓冲
-        char[] buffer = new char[32];
+        char[] buffer = new char[64];
         InputStream is = new ByteArrayInputStream(data);
         InputStreamReader isr = new InputStreamReader(is);
-        int ret = isr.read(buffer);
+        int size = isr.read(buffer);
         isr.close();
 
         // 打印缓冲的内容到控制台
-        // writer.printf("read size = %d\n\n", ret);
-        writer.println(new String(buffer));
+        writer.println(new String(buffer, 0, size));
     }
 }
+```

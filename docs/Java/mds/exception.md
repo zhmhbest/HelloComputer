@@ -1,6 +1,66 @@
-package org.example.exception;
+<!-- ### Exception -->
 
-public class finally和return {
+`try-finally`、`try-catch`
+
+```java
+// 在try开头的代码块中catch和finally必须保留一个
+try {
+    System.out.println("try");
+} finally {
+    System.out.println("finally");
+}
+try {
+    System.out.println("try");
+} catch (Exception e) {
+    System.out.println(e.getMessage());
+}
+```
+
+`throw`、`throws`
+
+```java
+public static void main(String[] args)
+    throws Exception // 表示该方法存在抛出此异常的可能性
+{
+    // 手动制造异常抛出
+    throw new Exception("Exception Message");
+}
+```
+
+`Exception`、`Error`
+
+```java
+public static void main(String[] args) {
+    try {
+        // 异常
+        throw new Exception("Exception");
+        // throw new NullPointerException();       // 空指针
+        // throw new IndexOutOfBoundsException();  // 下标越界
+        // throw new ClassCastException();         // 类型转换异常
+        // throw new IllegalArgumentException();   // 不合规的参数
+        // throw new FileNotFoundException();      // 文件不存在
+        // throw new IOException();                // IO
+        // throw new SQLException();               // SQL
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+    }
+    try {
+        // 错误
+        throw new Error("Error");
+    } catch (Error e) {
+        System.out.println(e.getMessage());
+    }
+
+    System.out.println("OK");
+}
+```
+
+- 若`finally`直接`return`，则以`finally`为准
+- 若`finally`改变`return`引用的值，则返回值改变
+- 若`finally`改变`return`基础变量的值，则返回值不改变
+
+```java
+public class Main {
     static int defaultReturn() {
         try {
             System.out.println("try");
@@ -97,12 +157,6 @@ public class finally和return {
         // return -1; // 该语句无法访问
     }
 
-    /**
-     * 结论：
-     * 若finally直接return，则以finally为准
-     * 若finally改变return引用的值，则返回值改变
-     * 若finally改变return基础变量的值，则返回值不改变
-     */
     public static void main(String[] args) {
         System.out.println(defaultReturn());
         // try、catch、finally、remain、-1
@@ -133,3 +187,4 @@ public class finally和return {
         System.out.println("--------");
     }
 }
+```
