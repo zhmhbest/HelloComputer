@@ -45,16 +45,16 @@ classDiagram
         peek() E
     }
 
-    ArrayList ..|> List
-    Vector ..|> List
-    LinkedList ..|> List
+    ArrayList <|.. List
+    Vector <|.. List
+    LinkedList <|.. List
 
-    Deque --|> Stack
-    Deque --|> Queue
-    LinkedList ..|> Deque
-    ArrayDeque ..|> Deque
-    AbstractQueue ..|> Queue
-    PriorityQueue --|> AbstractQueue
+    Deque <|-- Stack
+    Deque <|-- Queue
+    LinkedList <|.. Deque
+    ArrayDeque <|.. Deque
+    AbstractQueue <|.. Queue
+    PriorityQueue <|-- AbstractQueue
 ```
 
 &nbsp;
@@ -75,10 +75,10 @@ classDiagram
         <<Interface>>
     }
 
-    AbstractSet ..|> Set
-    HashSet --|> AbstractSet
-    TreeSet --|> AbstractSet
-    TreeSet ..|> NavigableSet
+    AbstractSet <|.. Set
+    HashSet <|-- AbstractSet
+    TreeSet <|-- AbstractSet
+    TreeSet <|.. NavigableSet
 ```
 
 &nbsp;
@@ -97,16 +97,16 @@ classDiagram
     class Dictionary {
     }
 
-    AbstractMap ..|> Map
+    AbstractMap <|.. Map
 
-    TreeMap --|> AbstractMap
-    TreeMap ..|> NavigableMap
+    TreeMap <|-- AbstractMap
+    TreeMap <|.. NavigableMap
 
-    HashMap --|> AbstractMap
-    LinkedHashMap --|> HashMap
+    HashMap <|-- AbstractMap
+    LinkedHashMap <|-- HashMap
 
-    Hashtable ..|> Map
-    Hashtable --|> Dictionary
+    Hashtable <|.. Map
+    Hashtable <|-- Dictionary
 ```
 
 |            | 数据结构 | 线程安全性 | 扩容机制 |

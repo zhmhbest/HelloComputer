@@ -17,6 +17,10 @@
 -XX:NewRatio=<size>         年轻代:年老代的比值=1:<size>
 ```
 
+### 运⾏时数据区
+
+![runtime_data](images/runtime_data.png)
+
 ### 垃圾判断
 
 - 引用计数法

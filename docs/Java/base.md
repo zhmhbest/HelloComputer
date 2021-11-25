@@ -102,20 +102,31 @@ public class Main {
 
 #### 反射
 
-- 动态加载，提高代码灵活性。
-- 反射操作的效率低于非反射操作。
-- 反射技术要求程序必须在一个没有安全限制的环境中运行。
-- 反射允许代码执行一些在正常情况下不被允许的操作，破坏了抽象性。
+使用`Class.forName("com.mysql.jdbc.Driver")`这种方式来控制类的加载。反射可以加载在编译时不存在的类。`Class`和`java.lang.reflect`一起对反射提供了支持。
 
-#### 通配符
+**反射的优点**：
+
+- 动态加载，提高代码灵活性。
+
+**反射的缺点**：
+
+- 性能开销：反射操作的效率低于非反射操作。
+- 安全限制：反射技术要求程序必须在一个没有安全限制的环境中运行。
+- 内部暴露：反射允许代码执行一些在正常情况下不被允许的操作，破坏了抽象性。
+
+### 泛型
+
+#### 泛型通配符
 
 ```java
-        // 接受任何继承自ClassType的类型
-        List<? extends Integer> list1 = new ArrayList<>();
+// 接受任何继承自ClassType的类型
+List<? extends Number> list1 = new ArrayList<Integer>();
 
-        // 接受任何ClassType的父类类型
-        List<? super Integer> list2 = new ArrayList<>();
+// 接受任何ClassType的父类类型
+List<? super Integer> list2 = new ArrayList<Number>();
 ```
+
+#### 泛型返回
 
 ```java
 public class Main {
@@ -200,3 +211,27 @@ List<String> list1 = new ArrayList<String>();
 
 List<String> list2 = new ArrayList<>();
 ```
+
+### 字符串
+
+|                                                              | 说明                 |
+| -----------------------------------------------------------: | :------------------- |
+|                                               `int length()` | 字符串长度           |
+|                                    `int indexOf(String str)` | 字串位置             |
+|                                     `char charAt(int index)` | 指定位置的字符       |
+|                                              `String trim()` | 删去两端空白         |
+|                 `String replace(char oldChar, char newChar)` | 字符串替换           |
+| `String substring(int beginIndex)`<br>`String substring(int beginIndex, int endIndex)` | 截取子字符串         |
+|                               `String[] split(String regex)` | 字符串分割           |
+|    `byte[] getBytes()`<br>`byte[] getBytes(Charset charset)` | 返回字节数组         |
+|                            `boolean equals(Object anObject)` | 两个字符串值是否相同 |
+|                                       `String toLowerCase()` | 转化为小写           |
+|                                       `String toUpperCase()` | 转化为大写           |
+
+### 取整
+
+|              | 说明     | 例1              | 例2              | 例3              |
+| -----------: | :------- | :--------------- | :--------------- | :--------------- |
+| `Math.round` | 四舍五入 | `round(-1.6)=-2` | `round(-1.5)=-1` | `round(-1.4)=-1` |
+|  `Math.ceil` | 向上取整 | `ceil(-1.6)=-1`  | `ceil(-1.5)=-1`  | `ceil(-1.4)=-1`  |
+| `Math.floor` | 向下取整 | `floor(-1.6)=-2` | `floor(-1.5)=-2` | `floor(-1.4)=-2` |

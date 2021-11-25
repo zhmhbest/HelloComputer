@@ -274,16 +274,28 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1">&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</a>
 <ul>
 <li><a href="#%E5%8F%8D%E5%B0%84">&#x53CD;&#x5C04;</a></li>
-<li><a href="#%E9%80%9A%E9%85%8D%E7%AC%A6">&#x901A;&#x914D;&#x7B26;</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B3%9B%E5%9E%8B">&#x6CDB;&#x578B;</a>
+<ul>
+<li><a href="#%E6%B3%9B%E5%9E%8B%E9%80%9A%E9%85%8D%E7%AC%A6">&#x6CDB;&#x578B;&#x901A;&#x914D;&#x7B26;</a></li>
+<li><a href="#%E6%B3%9B%E5%9E%8B%E8%BF%94%E5%9B%9E">&#x6CDB;&#x578B;&#x8FD4;&#x56DE;</a></li>
 </ul>
 </li>
 <li><a href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB">&#x63A5;&#x53E3;&#x548C;&#x62BD;&#x8C61;&#x7C7B;</a></li>
 <li><a href="#%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1">&#x88C5;&#x7BB1;&#x548C;&#x62C6;&#x7BB1;</a></li>
 <li><a href="#%E7%B1%BB%E5%9E%8B%E6%93%A6%E9%99%A4">&#x7C7B;&#x578B;&#x64E6;&#x9664;</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">&#x5B57;&#x7B26;&#x4E32;</a></li>
+<li><a href="#%E5%8F%96%E6%95%B4">&#x53D6;&#x6574;</a></li>
 </ul>
 </li>
 <li><a href="#exception">Exception</a></li>
-<li><a href="#io">IO</a></li>
+<li><a href="#io">IO</a>
+<ul>
+<li><a href="#%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%B5%81">&#x5B57;&#x8282;&#x6D41;&#x4E0E;&#x5B57;&#x7B26;&#x6D41;</a></li>
+<li><a href="#bio-nio-aio">BIO&#x3001;NIO&#x3001;AIO</a></li>
+</ul>
+</li>
 <li><a href="#collection">Collection</a></li>
 <li><a href="#thread">Thread</a>
 <ul>
@@ -299,6 +311,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#jvm">JVM</a>
 <ul>
+<li><a href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA">&#x8FD0;&#x2F8F;&#x65F6;&#x6570;&#x636E;&#x533A;</a></li>
 <li><a href="#%E5%9E%83%E5%9C%BE%E5%88%A4%E6%96%AD">&#x5783;&#x573E;&#x5224;&#x65AD;</a></li>
 <li><a href="#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95">&#x5783;&#x573E;&#x6536;&#x96C6;&#x7B97;&#x6CD5;</a></li>
 <li><a href="#jvm-heap">JVM Heap</a></li>
@@ -413,20 +426,29 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token punctuation">}</span>
 </pre><h4 class="mume-header" id="%E5%8F%8D%E5%B0%84">&#x53CD;&#x5C04;</h4>
 
+<p>&#x4F7F;&#x7528;<code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;)</code>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x63A7;&#x5236;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x3002;&#x53CD;&#x5C04;&#x53EF;&#x4EE5;&#x52A0;&#x8F7D;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x7C7B;&#x3002;<code>Class</code>&#x548C;<code>java.lang.reflect</code>&#x4E00;&#x8D77;&#x5BF9;&#x53CD;&#x5C04;&#x63D0;&#x4F9B;&#x4E86;&#x652F;&#x6301;&#x3002;</p>
+<p><strong>&#x53CD;&#x5C04;&#x7684;&#x4F18;&#x70B9;</strong>&#xFF1A;</p>
 <ul>
 <li>&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#xFF0C;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7075;&#x6D3B;&#x6027;&#x3002;</li>
-<li>&#x53CD;&#x5C04;&#x64CD;&#x4F5C;&#x7684;&#x6548;&#x7387;&#x4F4E;&#x4E8E;&#x975E;&#x53CD;&#x5C04;&#x64CD;&#x4F5C;&#x3002;</li>
-<li>&#x53CD;&#x5C04;&#x6280;&#x672F;&#x8981;&#x6C42;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x5728;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x5B89;&#x5168;&#x9650;&#x5236;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x8FD0;&#x884C;&#x3002;</li>
-<li>&#x53CD;&#x5C04;&#x5141;&#x8BB8;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7834;&#x574F;&#x4E86;&#x62BD;&#x8C61;&#x6027;&#x3002;</li>
 </ul>
-<h4 class="mume-header" id="%E9%80%9A%E9%85%8D%E7%AC%A6">&#x901A;&#x914D;&#x7B26;</h4>
+<p><strong>&#x53CD;&#x5C04;&#x7684;&#x7F3A;&#x70B9;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x6027;&#x80FD;&#x5F00;&#x9500;&#xFF1A;&#x53CD;&#x5C04;&#x64CD;&#x4F5C;&#x7684;&#x6548;&#x7387;&#x4F4E;&#x4E8E;&#x975E;&#x53CD;&#x5C04;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x5B89;&#x5168;&#x9650;&#x5236;&#xFF1A;&#x53CD;&#x5C04;&#x6280;&#x672F;&#x8981;&#x6C42;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x5728;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x5B89;&#x5168;&#x9650;&#x5236;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x8FD0;&#x884C;&#x3002;</li>
+<li>&#x5185;&#x90E8;&#x66B4;&#x9732;&#xFF1A;&#x53CD;&#x5C04;&#x5141;&#x8BB8;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7834;&#x574F;&#x4E86;&#x62BD;&#x8C61;&#x6027;&#x3002;</li>
+</ul>
+<h3 class="mume-header" id="%E6%B3%9B%E5%9E%8B">&#x6CDB;&#x578B;</h3>
 
-<pre data-role="codeBlock" data-info="java" class="language-java">        <span class="token comment">// &#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x7EE7;&#x627F;&#x81EA;ClassType&#x7684;&#x7C7B;&#x578B;</span>
-        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 class="mume-header" id="%E6%B3%9B%E5%9E%8B%E9%80%9A%E9%85%8D%E7%AC%A6">&#x6CDB;&#x578B;&#x901A;&#x914D;&#x7B26;</h4>
 
-        <span class="token comment">// &#x63A5;&#x53D7;&#x4EFB;&#x4F55;ClassType&#x7684;&#x7236;&#x7C7B;&#x7C7B;&#x578B;</span>
-        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword keyword-super">super</span> <span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre><pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token comment">// &#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x7EE7;&#x627F;&#x81EA;ClassType&#x7684;&#x7C7B;&#x578B;</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">Number</span><span class="token punctuation">&gt;</span></span> list1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// &#x63A5;&#x53D7;&#x4EFB;&#x4F55;ClassType&#x7684;&#x7236;&#x7C7B;&#x7C7B;&#x578B;</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword keyword-super">super</span> <span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Number</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h4 class="mume-header" id="%E6%B3%9B%E5%9E%8B%E8%BF%94%E5%9B%9E">&#x6CDB;&#x578B;&#x8FD4;&#x56DE;</h4>
+
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
     <span class="token keyword keyword-static">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">cast</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">,</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> cls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">)</span> obj<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -498,7 +520,99 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token comment">// &#x5373;&#x540E;&#x4E00;&#x4E2A;&lt;String&gt;&#x6CA1;&#x6709;&#x8D77;&#x5230;&#x4EFB;&#x4F55;&#x4F5C;&#x7528;</span>
 
 <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre><h2 class="mume-header" id="exception">Exception</h2>
+</pre><h3 class="mume-header" id="%E5%AD%97%E7%AC%A6%E4%B8%B2">&#x5B57;&#x7B26;&#x4E32;</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>int length()</code></td>
+<td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>int indexOf(String str)</code></td>
+<td style="text-align:left">&#x5B57;&#x4E32;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>char charAt(int index)</code></td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x7684;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>String trim()</code></td>
+<td style="text-align:left">&#x5220;&#x53BB;&#x4E24;&#x7AEF;&#x7A7A;&#x767D;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>String replace(char oldChar, char newChar)</code></td>
+<td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>String substring(int beginIndex)</code><br><code>String substring(int beginIndex, int endIndex)</code></td>
+<td style="text-align:left">&#x622A;&#x53D6;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>String[] split(String regex)</code></td>
+<td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;&#x5206;&#x5272;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>byte[] getBytes()</code><br><code>byte[] getBytes(Charset charset)</code></td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x5B57;&#x8282;&#x6570;&#x7EC4;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>boolean equals(Object anObject)</code></td>
+<td style="text-align:left">&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x662F;&#x5426;&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>String toLowerCase()</code></td>
+<td style="text-align:left">&#x8F6C;&#x5316;&#x4E3A;&#x5C0F;&#x5199;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>String toUpperCase()</code></td>
+<td style="text-align:left">&#x8F6C;&#x5316;&#x4E3A;&#x5927;&#x5199;</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="%E5%8F%96%E6%95%B4">&#x53D6;&#x6574;</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x4F8B;1</th>
+<th style="text-align:left">&#x4F8B;2</th>
+<th style="text-align:left">&#x4F8B;3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>Math.round</code></td>
+<td style="text-align:left">&#x56DB;&#x820D;&#x4E94;&#x5165;</td>
+<td style="text-align:left"><code>round(-1.6)=-2</code></td>
+<td style="text-align:left"><code>round(-1.5)=-1</code></td>
+<td style="text-align:left"><code>round(-1.4)=-1</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>Math.ceil</code></td>
+<td style="text-align:left">&#x5411;&#x4E0A;&#x53D6;&#x6574;</td>
+<td style="text-align:left"><code>ceil(-1.6)=-1</code></td>
+<td style="text-align:left"><code>ceil(-1.5)=-1</code></td>
+<td style="text-align:left"><code>ceil(-1.4)=-1</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>Math.floor</code></td>
+<td style="text-align:left">&#x5411;&#x4E0B;&#x53D6;&#x6574;</td>
+<td style="text-align:left"><code>floor(-1.6)=-2</code></td>
+<td style="text-align:left"><code>floor(-1.5)=-2</code></td>
+<td style="text-align:left"><code>floor(-1.4)=-2</code></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="exception">Exception</h2>
 
 <p><code>try-finally</code>&#x3001;<code>try-catch</code></p>
 <pre data-role="codeBlock" data-info="java" class="language-java"><span class="token comment">// &#x5728;try&#x5F00;&#x5934;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x4E2D;catch&#x548C;finally&#x5FC5;&#x987B;&#x4FDD;&#x7559;&#x4E00;&#x4E2A;</span>
@@ -520,6 +634,27 @@ pre[data-line] .line-highlight[data-end]:after {
     <span class="token keyword keyword-throw">throw</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;Exception Message&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre><p><code>Exception</code>&#x3001;<code>Error</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">&#x7236;&#x7C7B;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>Exception</code></td>
+<td style="text-align:center"><code>Throwable</code></td>
+<td style="text-align:left">&#x5C06;&#x4F1A;&#x5BFC;&#x81F4;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x65AD;&#xFF0C;&#x4EC5;&#x9760;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x65E0;&#x6CD5;&#x6062;&#x590D;&#x548C;&#x9884;&#x9632;</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>Error</code></td>
+<td style="text-align:center"><code>Throwable</code></td>
+<td style="text-align:left"><code>RuntimeException</code>&#xFF1A;&#x78B0;&#x5230;&#x5373;&#x505C;&#x6B62;&#xFF0C;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x3002;<br><code>CheckedException</code>&#xFF1A;&#x5FC5;&#x987B;&#x6355;&#x83B7;&#x6216;<code>throws</code>&#x3002;</td>
+</tr>
+</tbody>
+</table>
 <pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword keyword-try">try</span> <span class="token punctuation">{</span>
         <span class="token comment">// &#x5F02;&#x5E38;</span>
@@ -677,6 +812,76 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token punctuation">}</span>
 </pre><h2 class="mume-header" id="io">IO</h2>
 
+<p><code>InputStream</code>&#x3001;<code>OutputStream</code></p>
+<div class="mermaid">classDiagram
+    class InputStream {
+        &lt;&lt;Abstract&gt;&gt;
+        read()* int
+        read(byte b[]) int
+        read(byte b[], int off, int len) int
+        skip(long n) long
+        available() int
+        close() void
+    }
+    class OutputStream {
+        &lt;&lt;Abstract&gt;&gt;
+        write(int b)* void
+        write(byte b[]) void
+        write(byte b[], int off, int len) void
+        flush() void
+        close() void
+    }
+
+    ByteArrayInputStream &lt;|-- InputStream
+    ByteArrayOutputStream &lt;|-- OutputStream
+
+    ObjectInputStream &lt;|-- InputStream
+    ObjectOutputStream &lt;|-- OutputStream
+
+    FilterInputStream &lt;|-- InputStream
+    FilterOutputStream &lt;|-- OutputStream
+
+    PipedInputStream &lt;|-- InputStream
+    PipedOutputStream &lt;|-- OutputStream
+
+    FilterInputStream &lt;|-- InputStream
+    FilterOutputStream &lt;|-- OutputStream
+
+    PrintStream &lt;|-- FilterOutputStream
+</div><p>&#xA0;</p>
+<p><code>Reader</code>&#x3001;<code>Writer</code></p>
+<div class="mermaid">classDiagram
+    class Reader {
+        &lt;&lt;Abstract&gt;&gt;
+        read(char cbuf[], int off, int len) int
+        skip(long n) long
+        close() void
+    }
+    class Writer {
+        &lt;&lt;Abstract&gt;&gt;
+        write(String str, int off, int len) void
+        append(CharSequence csq, int start, int end) Writer
+        flush() void
+        close() void
+    }
+
+    InputStreamReader &lt;|-- Reader
+    OutputStreamWriter &lt;|-- Writer
+
+    CharArrayReader &lt;|-- Reader
+    CharArrayWriter &lt;|-- Writer
+
+    PipedReader &lt;|-- Reader
+    PipedWriter &lt;|-- Writer
+
+    StringReader &lt;|-- Reader
+    StringWriter &lt;|-- Writer
+
+    FileReader &lt;|-- Reader
+    FileWriter &lt;|-- Writer
+
+    PrintWriter &lt;|-- Writer
+</div><p>&#xA0;</p>
 <pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-import">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
 
 <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
@@ -707,7 +912,55 @@ pre[data-line] .line-highlight[data-end]:after {
         writer<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="collection">Collection</h2>
+</pre><h3 class="mume-header" id="%E5%AD%97%E8%8A%82%E6%B5%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%B5%81">&#x5B57;&#x8282;&#x6D41;&#x4E0E;&#x5B57;&#x7B26;&#x6D41;</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">&#x5355;&#x4F4D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">&#x5B57;&#x8282;&#x6D41;</td>
+<td style="text-align:center"><code>byte</code></td>
+</tr>
+<tr>
+<td style="text-align:right">&#x5B57;&#x7B26;&#x6D41;</td>
+<td style="text-align:center"><code>char</code></td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="bio-nio-aio">BIO&#x3001;NIO&#x3001;AIO</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x7279;&#x70B9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>BIO</strong></td>
+<td style="text-align:center">&#x540C;&#x6B65;&#x963B;&#x585E;&#x5F0F;IO</td>
+<td style="text-align:left">&#x6A21;&#x5F0F;&#x7B80;&#x5355;&#x4F7F;&#x7528;&#x65B9;&#x4FBF;&#xFF0C;&#x5E76;&#x53D1;&#x5904;&#x7406;&#x80FD;&#x529B;&#x4F4E;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>NIO</strong></td>
+<td style="text-align:center">&#x540C;&#x6B65;&#x975E;&#x963B;&#x585E;IO</td>
+<td style="text-align:left">&#x901A;&#x8FC7;Channel&#x901A;&#x8BAF;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x591A;&#x8DEF;&#x590D;&#x7528;</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>AIO</strong></td>
+<td style="text-align:center">&#x5F02;&#x6B65;&#x975E;&#x963B;&#x585E;IO</td>
+<td style="text-align:left">&#x5F02;&#x6B65;IO</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="collection">Collection</h2>
 
 <div class="mermaid">classDiagram
     class List {
@@ -753,16 +1006,16 @@ pre[data-line] .line-highlight[data-end]:after {
         peek() E
     }
 
-    ArrayList ..|&gt; List
-    Vector ..|&gt; List
-    LinkedList ..|&gt; List
+    ArrayList &lt;|.. List
+    Vector &lt;|.. List
+    LinkedList &lt;|.. List
 
-    Deque --|&gt; Stack
-    Deque --|&gt; Queue
-    LinkedList ..|&gt; Deque
-    ArrayDeque ..|&gt; Deque
-    AbstractQueue ..|&gt; Queue
-    PriorityQueue --|&gt; AbstractQueue
+    Deque &lt;|-- Stack
+    Deque &lt;|-- Queue
+    LinkedList &lt;|.. Deque
+    ArrayDeque &lt;|.. Deque
+    AbstractQueue &lt;|.. Queue
+    PriorityQueue &lt;|-- AbstractQueue
 </div><p>&#xA0;</p>
 <div class="mermaid">classDiagram
     class Set {
@@ -779,10 +1032,10 @@ pre[data-line] .line-highlight[data-end]:after {
         &lt;&lt;Interface&gt;&gt;
     }
 
-    AbstractSet ..|&gt; Set
-    HashSet --|&gt; AbstractSet
-    TreeSet --|&gt; AbstractSet
-    TreeSet ..|&gt; NavigableSet
+    AbstractSet &lt;|.. Set
+    HashSet &lt;|-- AbstractSet
+    TreeSet &lt;|-- AbstractSet
+    TreeSet &lt;|.. NavigableSet
 </div><p>&#xA0;</p>
 <div class="mermaid">classDiagram
     class NavigableMap {
@@ -797,16 +1050,16 @@ pre[data-line] .line-highlight[data-end]:after {
     class Dictionary {
     }
 
-    AbstractMap ..|&gt; Map
+    AbstractMap &lt;|.. Map
 
-    TreeMap --|&gt; AbstractMap
-    TreeMap ..|&gt; NavigableMap
+    TreeMap &lt;|-- AbstractMap
+    TreeMap &lt;|.. NavigableMap
 
-    HashMap --|&gt; AbstractMap
-    LinkedHashMap --|&gt; HashMap
+    HashMap &lt;|-- AbstractMap
+    LinkedHashMap &lt;|-- HashMap
 
-    Hashtable ..|&gt; Map
-    Hashtable --|&gt; Dictionary
+    Hashtable &lt;|.. Map
+    Hashtable &lt;|-- Dictionary
 </div><table>
 <thead>
 <tr>
@@ -1196,6 +1449,14 @@ pre[data-line] .line-highlight[data-end]:after {
 <td style="text-align:right"><code>ReentrantLock</code></td>
 <td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;<code>lock</code>&#x548C;<code>unlock</code>&#x7684;&#x65F6;&#x673A;&#x3002;</td>
 </tr>
+<tr>
+<td style="text-align:right"><code>ReentrantReadWriteLock</code></td>
+<td style="text-align:left">&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x8BFB;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x201C;&#x5199;+&#x8BFB;&#x201D;&#x3001;&#x201C;&#x5199;+&#x5199;&#x201D;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#x3002;<br>&#x8BFB;&#x5199;&#x9501;&#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x4E86;&#x4E24;&#x4E2A;&#x9501;&#xFF1A;ReadLock&#x3001;WriteLock</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>Semaphore</code></td>
+<td style="text-align:left">&#x4FE1;&#x53F7;&#x91CF;&#x673A;&#x5236;&#x3001;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#x67D0;&#x4E2A;&#x8D44;&#x6E90;</td>
+</tr>
 </tbody>
 </table>
 <pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-static">static</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">VolatilePlus</span> <span class="token punctuation">{</span>
@@ -1351,7 +1612,10 @@ pre[data-line] .line-highlight[data-end]:after {
 -XX:PermSize<span class="token operator">=</span><span class="token operator">&lt;</span>size<span class="token operator">&gt;</span>         &#x6301;&#x4E45;&#x4EE3;&#x521D;&#x59CB;&#x5927;&#x5C0F;
 -XX:MaxPermSize<span class="token operator">=</span><span class="token operator">&lt;</span>size<span class="token operator">&gt;</span>      &#x6301;&#x4E45;&#x4EE3;&#x6700;&#x5927;&#x5927;&#x5C0F;
 -XX:NewRatio<span class="token operator">=</span><span class="token operator">&lt;</span>size<span class="token operator">&gt;</span>         &#x5E74;&#x8F7B;&#x4EE3;:&#x5E74;&#x8001;&#x4EE3;&#x7684;&#x6BD4;&#x503C;<span class="token operator">=</span><span class="token number">1</span>:<span class="token operator">&lt;</span>size<span class="token operator">&gt;</span>
-</pre><h3 class="mume-header" id="%E5%9E%83%E5%9C%BE%E5%88%A4%E6%96%AD">&#x5783;&#x573E;&#x5224;&#x65AD;</h3>
+</pre><h3 class="mume-header" id="%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA">&#x8FD0;&#x2F8F;&#x65F6;&#x6570;&#x636E;&#x533A;</h3>
+
+<p><img src="images/runtime_data.png" alt="runtime_data"></p>
+<h3 class="mume-header" id="%E5%9E%83%E5%9C%BE%E5%88%A4%E6%96%AD">&#x5783;&#x573E;&#x5224;&#x65AD;</h3>
 
 <ul>
 <li>&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;</li>

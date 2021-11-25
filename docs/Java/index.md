@@ -7,24 +7,24 @@
 
 ## Base
 
-@import "./mds/base.md"
+@import "./base.md"
 
 ## Exception
 
-@import "./mds/exception.md"
+@import "./exception.md"
 
 ## IO
 
-@import "./mds/io.md"
+@import "./io.md"
 
 ## Collection
 
-@import "./mds/collection.md"
+@import "./collection.md"
 
 ## Thread
 
-@import "./mds/thread.md"
+@import "./thread.md"
 
 ## JVM
 
-@import "./mds/jvm.md"
+@import "./jvm.md"

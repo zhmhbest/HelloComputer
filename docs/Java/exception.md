@@ -29,6 +29,11 @@ public static void main(String[] args)
 
 `Exception`、`Error`
 
+|             |    父类     | 说明                                                         |
+| ----------: | :---------: | :----------------------------------------------------------- |
+| `Exception` | `Throwable` | 将会导致应用程序中断，仅靠程序本身无法恢复和预防             |
+|     `Error` | `Throwable` | `RuntimeException`：碰到即停止，不会自动处理。<br>`CheckedException`：必须捕获或`throws`。 |
+
 ```java
 public static void main(String[] args) {
     try {
