@@ -107,6 +107,28 @@ public class Main {
 - 反射技术要求程序必须在一个没有安全限制的环境中运行。
 - 反射允许代码执行一些在正常情况下不被允许的操作，破坏了抽象性。
 
+#### 通配符
+
+```java
+        // 接受任何继承自ClassType的类型
+        List<? extends Integer> list1 = new ArrayList<>();
+
+        // 接受任何ClassType的父类类型
+        List<? super Integer> list2 = new ArrayList<>();
+```
+
+```java
+public class Main {
+    static <T> T cast(Object obj, Class<T> cls) {
+        return (T) obj;
+    }
+    public static void main(String[] args) {
+        String str = cast("ABC", String.class);
+        System.out.println(str);
+    }
+}
+```
+
 ### 接口和抽象类
 
 ```java

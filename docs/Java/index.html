@@ -274,6 +274,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1">&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</a>
 <ul>
 <li><a href="#%E5%8F%8D%E5%B0%84">&#x53CD;&#x5C04;</a></li>
+<li><a href="#%E9%80%9A%E9%85%8D%E7%AC%A6">&#x901A;&#x914D;&#x7B26;</a></li>
 </ul>
 </li>
 <li><a href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB">&#x63A5;&#x53E3;&#x548C;&#x62BD;&#x8C61;&#x7C7B;</a></li>
@@ -288,8 +289,11 @@ pre[data-line] .line-highlight[data-end]:after {
 <ul>
 <li><a href="#%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95">&#x76F8;&#x5173;&#x65B9;&#x6CD5;</a></li>
 <li><a href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95">&#x591A;&#x7EBF;&#x7A0B;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;</a></li>
-<li><a href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</a></li>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</a>
+<ul>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5">&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</a></li>
+</ul>
+</li>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0">&#x7EBF;&#x7A0B;&#x6C60;</a></li>
 </ul>
 </li>
@@ -415,7 +419,23 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>&#x53CD;&#x5C04;&#x6280;&#x672F;&#x8981;&#x6C42;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x5728;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x5B89;&#x5168;&#x9650;&#x5236;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x8FD0;&#x884C;&#x3002;</li>
 <li>&#x53CD;&#x5C04;&#x5141;&#x8BB8;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7834;&#x574F;&#x4E86;&#x62BD;&#x8C61;&#x6027;&#x3002;</li>
 </ul>
-<h3 class="mume-header" id="%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB">&#x63A5;&#x53E3;&#x548C;&#x62BD;&#x8C61;&#x7C7B;</h3>
+<h4 class="mume-header" id="%E9%80%9A%E9%85%8D%E7%AC%A6">&#x901A;&#x914D;&#x7B26;</h4>
+
+<pre data-role="codeBlock" data-info="java" class="language-java">        <span class="token comment">// &#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x7EE7;&#x627F;&#x81EA;ClassType&#x7684;&#x7C7B;&#x578B;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list1 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// &#x63A5;&#x53D7;&#x4EFB;&#x4F55;ClassType&#x7684;&#x7236;&#x7C7B;&#x7C7B;&#x578B;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword keyword-super">super</span> <span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> list2 <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-static">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">cast</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">,</span> <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> cls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">)</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token function">cast</span><span class="token punctuation">(</span><span class="token string">&quot;ABC&quot;</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword keyword-class">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB">&#x63A5;&#x53E3;&#x548C;&#x62BD;&#x8C61;&#x7C7B;</h3>
 
 <pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
     <span class="token keyword keyword-interface">interface</span> <span class="token class-name">MyInterface</span> <span class="token punctuation">{</span>
@@ -792,28 +812,28 @@ pre[data-line] .line-highlight[data-end]:after {
 <tr>
 <th style="text-align:right"></th>
 <th style="text-align:center">&#x6570;&#x636E;&#x7ED3;&#x6784;</th>
-<th style="text-align:left">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x6027;</th>
-<th>&#x6269;&#x5BB9;&#x673A;&#x5236;</th>
+<th style="text-align:center">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x6027;</th>
+<th style="text-align:left">&#x6269;&#x5BB9;&#x673A;&#x5236;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:right">ArrayList</td>
 <td style="text-align:center">&#x6570;&#x7EC4;</td>
-<td style="text-align:left">&#x4E0D;&#x5B89;&#x5168;</td>
-<td>1.5&#x500D;</td>
+<td style="text-align:center">&#x65E0;</td>
+<td style="text-align:left">1.5&#x500D;</td>
 </tr>
 <tr>
 <td style="text-align:right">Vector</td>
 <td style="text-align:center">&#x6570;&#x7EC4;</td>
-<td style="text-align:left">&#x5B89;&#x5168;</td>
-<td>2.0&#x500D;</td>
+<td style="text-align:center">&#x6709;</td>
+<td style="text-align:left">2.0&#x500D;</td>
 </tr>
 <tr>
 <td style="text-align:right">LinkedList</td>
 <td style="text-align:center">&#x94FE;&#x8868;</td>
-<td style="text-align:left">&#x4E0D;&#x5B89;&#x5168;</td>
-<td>&#x65E0;</td>
+<td style="text-align:center">&#x65E0;</td>
+<td style="text-align:left">&#x65E0;</td>
 </tr>
 </tbody>
 </table>
@@ -844,19 +864,19 @@ pre[data-line] .line-highlight[data-end]:after {
 <tr>
 <th style="text-align:right"></th>
 <th style="text-align:center">&#x6570;&#x636E;&#x7ED3;&#x6784;</th>
-<th>&#x7279;&#x70B9;</th>
+<th style="text-align:left">&#x7279;&#x70B9;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:right">TreeSet</td>
 <td style="text-align:center">&#x4E8C;&#x53C9;&#x6811;</td>
-<td>&#x5143;&#x7D20;&#x6709;&#x5E8F;</td>
+<td style="text-align:left">&#x5143;&#x7D20;&#x6709;&#x5E8F;</td>
 </tr>
 <tr>
 <td style="text-align:right">HashSet</td>
 <td style="text-align:center">&#x54C8;&#x5E0C;&#x8868;</td>
-<td>&#x5143;&#x7D20;&#x65E0;&#x5E8F;&#x3001;&#x53EF;&#x653E;&#x5165;null&#x503C;</td>
+<td style="text-align:left">&#x5143;&#x7D20;&#x65E0;&#x5E8F;&#x3001;&#x53EF;&#x653E;&#x5165;null&#x503C;</td>
 </tr>
 </tbody>
 </table>
@@ -866,7 +886,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <th style="text-align:right"></th>
 <th style="text-align:left">&#x6570;&#x636E;&#x7ED3;&#x6784;</th>
 <th style="text-align:center">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</th>
-<th>&#x7279;&#x70B9;</th>
+<th style="text-align:left">&#x7279;&#x70B9;</th>
 </tr>
 </thead>
 <tbody>
@@ -874,25 +894,25 @@ pre[data-line] .line-highlight[data-end]:after {
 <td style="text-align:right">HashMap</td>
 <td style="text-align:left">&#x6563;&#x5217;&#x8868;&#x3001;&#x5355;&#x94FE;&#x8868;/&#x7EA2;&#x9ED1;&#x6811;</td>
 <td style="text-align:center">&#x65E0;</td>
-<td><code>key</code>&#x548C;<code>value</code>&#x53EF;&#x4EE5;&#x4E3A;<code>null</code></td>
+<td style="text-align:left"><code>key</code>&#x548C;<code>value</code>&#x53EF;&#x4EE5;&#x4E3A;<code>null</code></td>
 </tr>
 <tr>
 <td style="text-align:right">LinkedHashMap</td>
 <td style="text-align:left">&#x6563;&#x5217;&#x8868;&#x3001;&#x5355;&#x94FE;&#x8868;&#x3001;&#x53CC;&#x5411;&#x94FE;&#x8868;</td>
 <td style="text-align:center">&#x65E0;</td>
-<td>&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7EF4;&#x62A4;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x987A;&#x5E8F;</td>
+<td style="text-align:left">&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7EF4;&#x62A4;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x987A;&#x5E8F;</td>
 </tr>
 <tr>
 <td style="text-align:right">TreeMap</td>
 <td style="text-align:left">&#x7EA2;&#x9ED1;&#x6811;</td>
 <td style="text-align:center">&#x65E0;</td>
-<td></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:right">Hashtable</td>
 <td style="text-align:left">&#x6563;&#x5217;&#x8868;&#x3001;&#x5355;&#x94FE;&#x8868;</td>
 <td style="text-align:center">&#x6709;</td>
-<td></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -916,7 +936,31 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h3 class="mume-header" id="%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95">&#x76F8;&#x5173;&#x65B9;&#x6CD5;</h3>
 
-<div class="mermaid">classDiagram
+<div class="mermaid">flowchart TD
+    style NEW fill:HotPink,color:Black;
+    style TERMINATED fill:HotPink,color:Black;
+    style RUNNABLE fill:SpringGreen,color:Black;
+    style RUNNING fill:SpringGreen,color:Black;
+    style BLOCKED fill:Gold,color:Black;
+    style WAITING fill:Gold,color:Black;
+    style TIMED_WAITING fill:Gold,color:Black;
+
+    NEW([&quot;NEW\n&#x5DF2;&#x521B;&#x5EFA;&#xFF0C;&#x672A;&#x542F;&#x52A8;&quot;])
+    RUNNABLE([&quot;RUNNABLE\n&#x53EF;&#x8FD0;&#x884C;&quot;])
+    RUNNING([&quot;RUNNING\n&#x8FD0;&#x884C;&#x4E2D;&quot;])
+    TERMINATED([&quot;TERMINATED\n&#x7ED3;&#x675F;&#x8FD0;&#x884C;&quot;])
+    BLOCKED([&quot;BLOCKED\n&#x7B49;&#x5F85;&#x83B7;&#x5F97;&#x9501;&quot;])
+    WAITING([&quot;WAITING\n&#x7B49;&#x5F85;&#x4E8B;&#x4EF6;&#x5524;&#x9192;&quot;])
+    TIMED_WAITING([&quot;TIMED_WAITING\n&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x3001;&#x4E8B;&#x4EF6;&#x5524;&#x9192;&quot;])
+
+    NEW===&gt;RUNNABLE
+    RUNNING===&gt;TERMINATED
+    RUNNING&lt;===&gt;RUNNABLE
+
+    RUNNING --&gt;WAITING--&gt; RUNNABLE
+    RUNNING --&gt;TIMED_WAITING--&gt; RUNNABLE
+    RUNNING --&gt;BLOCKED--&gt; RUNNABLE
+</div><div class="mermaid">classDiagram
     class State {
         &lt;&lt;Enumeration&gt;&gt;
         NEW
@@ -969,7 +1013,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </div><table>
 <thead>
 <tr>
-<th style="text-align:right"></th>
+<th style="text-align:right">Thread&#x7684;&#x6210;&#x5458;&#x65B9;&#x6CD5;</th>
 <th style="text-align:left">&#x8BF4;&#x660E;</th>
 </tr>
 </thead>
@@ -1008,42 +1052,65 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td style="text-align:right"><code>stop</code></td>
-<td style="text-align:left">&#x4E2D;&#x65AD;&#x7EBF;&#x7A0B;&#xFF08;&#x5F03;&#x7528;&#xFF09;</td>
+<td style="text-align:left">&#x505C;&#x6B62;&#x7EBF;&#x7A0B;&#xFF08;&#x5F03;&#x7528;&#xFF09;</td>
 </tr>
 <tr>
 <td style="text-align:right"><code>run</code></td>
 <td style="text-align:left"><span style="color:red">&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x662F;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;</span></td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
 <tr>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
+<th style="text-align:right">&#x591A;&#x7EBF;&#x7A0B;&#x63A7;&#x5236;</th>
+<th style="text-align:center">&#x8BA9;&#x51FA;CPU</th>
+<th style="text-align:center">&#x91CA;&#x653E;&#x9501;</th>
+<th style="text-align:center">&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;&#x9636;&#x6BB5;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>Thread.sleep</code></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#xD7;</td>
+<td style="text-align:center">TIMED_WAITING</td>
+<td style="text-align:left">&#x7B49;&#x5F85;&#x6307;&#x5B9A;&#x65F6;&#x95F4;</td>
 </tr>
 <tr>
-<td style="text-align:right"><code>sleep</code></td>
-<td style="text-align:left">&#x8BA9;&#x51FA;CPU&#xFF08;&#x4E0D;&#x8003;&#x8651;&#x4F18;&#x5148;&#x7EA7;&#xFF09;&#xFF0C;&#x4E0D;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x8FDB;&#x5165;TIMED_WAITING</td>
+<td style="text-align:right"><code>Thread.yield</code></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#xD7;</td>
+<td style="text-align:center">RUNNABLE</td>
+<td style="text-align:left">&#x4EC5;&#x80FD;&#x8BA9;&#x4E0E;&#x540C;&#x7EA7;&#x6216;&#x66F4;&#x9AD8;&#x7EA7;</td>
 </tr>
 <tr>
-<td style="text-align:right"><code>yield</code></td>
-<td style="text-align:left">&#x8BA9;&#x51FA;CPU&#xFF08;&#x8BA9;&#x4E0E;&#x540C;&#x7EA7;&#x6216;&#x66F4;&#x9AD8;&#x7EA7;&#xFF09;&#xFF0C;&#x4E0D;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x8FDB;&#x5165;READY<br>&#x4F4E;&#x4F18;&#x5148;&#x7EA7;&#x7EBF;&#x7A0B;&#x5F88;&#x53EF;&#x80FD;&#x957F;&#x671F;&#x65E0;&#x6CD5;&#x6267;&#x884C;</td>
+<td style="text-align:right"><code>object.wait</code></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">WAITING</td>
+<td style="text-align:left">&#x5FC5;&#x987B;&#x653E;&#x5728;&#x5FAA;&#x73AF;&#x4F53;&#x548C;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#x4E2D;</td>
 </tr>
 <tr>
-<td style="text-align:right"><code>join</code></td>
-<td style="text-align:left">&#x8BA9;&#x51FA;CPU&#xFF0C;&#x91CA;&#x653E;&#x7BA1;&#x7A0B;&#x548C;&#x9501;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;BLOCKED<br>&#x76F4;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x6267;&#x884C;&#x672C;&#x7EBF;&#x7A0B;</td>
+<td style="text-align:right"><code>thread.join</code></td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">&#x221A;</td>
+<td style="text-align:center">BLOCKED</td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x7EBF;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x6267;&#x884C;&#x672C;&#x7EBF;&#x7A0B;</td>
 </tr>
 <tr>
-<td style="text-align:right"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:right"><code>wait</code></td>
-<td style="text-align:left">&#x8BA9;&#x51FA;CPU&#xFF0C;&#x91CA;&#x653E;&#x7BA1;&#x7A0B;&#x548C;&#x9501;&#xFF0C;&#x8FDB;&#x5165;WAITING</td>
-</tr>
-<tr>
-<td style="text-align:right"><code>notify</code></td>
+<td style="text-align:right"><code>object.notify</code></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 <td style="text-align:left">&#x968F;&#x673A;&#x5524;&#x9192;&#x5BF9;&#x8C61;&#x7684;&#x7B49;&#x5F85;&#x6C60;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;</td>
 </tr>
 <tr>
-<td style="text-align:right"><code>notifyAll</code></td>
+<td style="text-align:right"><code>object.notifyAll</code></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 <td style="text-align:left">&#x5524;&#x9192;&#x5BF9;&#x8C61;&#x7684;&#x7B49;&#x5F85;&#x6C60;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7EBF;&#x7A0B;</td>
 </tr>
 </tbody>
@@ -1109,25 +1176,25 @@ pre[data-line] .line-highlight[data-end]:after {
 <thead>
 <tr>
 <th style="text-align:right"></th>
-<th>&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:right"><code>volatile</code></td>
-<td>&#x524D;&#x53D8;&#x91CF;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#xFF08;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#xFF09;&#x4E2D;&#x7684;&#x503C;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x4ECE;&#x4E3B;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#x3002;<br>&#x4EC5;&#x80FD;&#x5B9E;&#x73B0;&#x539F;&#x59CB;&#x53D8;&#x91CF;&#xFF08;<code>boolean</code>&#x3001; <code>short</code> &#x3001;<code>int</code> &#x3001;<code>long</code>&#xFF09;&#x7684;&#x4FEE;&#x6539;&#x53EF;&#x89C1;&#x6027;&#xFF0C;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x539F;&#x5B50;&#x6027;&#x3002;<br>&#x6807;&#x8BB0;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5316;&#x3002;</td>
+<td style="text-align:left">&#x524D;&#x53D8;&#x91CF;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#xFF08;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#xFF09;&#x4E2D;&#x7684;&#x503C;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x4ECE;&#x4E3B;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#x3002;<br>&#x4EC5;&#x80FD;&#x5B9E;&#x73B0;&#x539F;&#x59CB;&#x53D8;&#x91CF;&#xFF08;<code>boolean</code>&#x3001; <code>short</code> &#x3001;<code>int</code> &#x3001;<code>long</code>&#xFF09;&#x7684;&#x4FEE;&#x6539;&#x53EF;&#x89C1;&#x6027;&#xFF0C;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x539F;&#x5B50;&#x6027;&#x3002;<br>&#x6807;&#x8BB0;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5316;&#x3002;</td>
 </tr>
 <tr>
 <td style="text-align:right"><code>synchronized</code></td>
-<td>&#x9501;&#x5B9A;&#x5F53;&#x524D;&#x53D8;&#x91CF;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8BE5;&#x53D8;&#x91CF;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x88AB;&#x963B;&#x585E;&#x4F4F;&#x3002;<br>&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x53D8;&#x91CF;&#x7684;&#x4FEE;&#x6539;&#x53EF;&#x89C1;&#x6027;&#x548C;&#x539F;&#x5B50;&#x6027;&#x3002;<br>&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x7EBF;&#x7A0B;&#x7684;&#x963B;&#x585E;&#x3002;</td>
+<td style="text-align:left">&#x9501;&#x5B9A;&#x5F53;&#x524D;&#x53D8;&#x91CF;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8BE5;&#x53D8;&#x91CF;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x88AB;&#x963B;&#x585E;&#x4F4F;&#x3002;<br>&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x53D8;&#x91CF;&#x7684;&#x4FEE;&#x6539;&#x53EF;&#x89C1;&#x6027;&#x548C;&#x539F;&#x5B50;&#x6027;&#x3002;<br>&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x7EBF;&#x7A0B;&#x7684;&#x963B;&#x585E;&#x3002;</td>
 </tr>
 <tr>
 <td style="text-align:right"><code>AtomicObject</code></td>
-<td>&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5BF9;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x65F6;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#xFF0C;<br>&#x672A;&#x6210;&#x529F;&#x7684;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x5C1D;&#x8BD5;&#xFF0C;&#x76F4;&#x7B49;&#x5230;&#x6267;&#x884C;&#x6210;&#x529F;&#x3002;</td>
+<td style="text-align:left">&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5BF9;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x65F6;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#xFF0C;<br>&#x672A;&#x6210;&#x529F;&#x7684;&#x7EBF;&#x7A0B;&#x7EE7;&#x7EED;&#x5C1D;&#x8BD5;&#xFF0C;&#x76F4;&#x7B49;&#x5230;&#x6267;&#x884C;&#x6210;&#x529F;&#x3002;</td>
 </tr>
 <tr>
 <td style="text-align:right"><code>ReentrantLock</code></td>
-<td>&#x81EA;&#x5B9A;&#x4E49;<code>lock</code>&#x548C;<code>unlock</code>&#x7684;&#x65F6;&#x673A;&#x3002;</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;<code>lock</code>&#x548C;<code>unlock</code>&#x7684;&#x65F6;&#x673A;&#x3002;</td>
 </tr>
 </tbody>
 </table>
@@ -1161,7 +1228,7 @@ pre[data-line] .line-highlight[data-end]:after {
         <span class="token keyword keyword-finally">finally</span> <span class="token punctuation">{</span> lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment">// &#x91CA;&#x653E;&#x9501;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</pre><h3 class="mume-header" id="%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5">&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</h3>
+</pre><h4 class="mume-header" id="%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5">&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</h4>
 
 <pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
     <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">OrderedThreads</span> <span class="token punctuation">{</span>
@@ -1217,15 +1284,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token punctuation">}</span>
 </pre><h3 class="mume-header" id="%E7%BA%BF%E7%A8%8B%E6%B1%A0">&#x7EBF;&#x7A0B;&#x6C60;</h3>
 
-<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ExecutorService</span> fixedThreadPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">ExecutorService</span> cachedThreadPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">ExecutorService</span> singleThreadExecutor <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">ExecutorService</span> scheduledThreadPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//</span>
-<span class="token class-name">ExecutorService</span> singleThreadScheduledExecutor <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadScheduledExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">ExecutorService</span> workStealingPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newWorkStealingPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">ThreadPoolExecutor</span> threadPool <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">,</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">LinkedBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre><table>
+<table>
 <thead>
 <tr>
 <th style="text-align:right"></th>
@@ -1267,7 +1326,15 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 </tbody>
 </table>
-<h2 class="mume-header" id="jvm">JVM</h2>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ExecutorService</span> fixedThreadPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ExecutorService</span> cachedThreadPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ExecutorService</span> singleThreadExecutor <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ExecutorService</span> scheduledThreadPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//</span>
+<span class="token class-name">ExecutorService</span> singleThreadScheduledExecutor <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadScheduledExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ExecutorService</span> workStealingPool <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newWorkStealingPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">ThreadPoolExecutor</span> threadPool <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">,</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">LinkedBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="jvm">JVM</h2>
 
 <pre data-role="codeBlock" data-info="bash" class="language-bash">-cp         &#x76EE;&#x5F55;/zip/jar&#x641C;&#x7D22;&#x8DEF;&#x5F84;
 -classpath  &#x76EE;&#x5F55;/zip/jar&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#xFF08;&#x53EF;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#xFF09;

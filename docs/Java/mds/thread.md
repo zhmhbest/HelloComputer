@@ -2,6 +2,33 @@
 ### 相关方法
 
 ```mermaid
+flowchart TD
+    style NEW fill:HotPink,color:Black;
+    style TERMINATED fill:HotPink,color:Black;
+    style RUNNABLE fill:SpringGreen,color:Black;
+    style RUNNING fill:SpringGreen,color:Black;
+    style BLOCKED fill:Gold,color:Black;
+    style WAITING fill:Gold,color:Black;
+    style TIMED_WAITING fill:Gold,color:Black;
+
+    NEW(["NEW\n已创建，未启动"])
+    RUNNABLE(["RUNNABLE\n可运行"])
+    RUNNING(["RUNNING\n运行中"])
+    TERMINATED(["TERMINATED\n结束运行"])
+    BLOCKED(["BLOCKED\n等待获得锁"])
+    WAITING(["WAITING\n等待事件唤醒"])
+    TIMED_WAITING(["TIMED_WAITING\n等待时间、事件唤醒"])
+
+    NEW===>RUNNABLE
+    RUNNING===>TERMINATED
+    RUNNING<===>RUNNABLE
+
+    RUNNING -->WAITING--> RUNNABLE
+    RUNNING -->TIMED_WAITING--> RUNNABLE
+    RUNNING -->BLOCKED--> RUNNABLE
+```
+
+```mermaid
 classDiagram
     class State {
         <<Enumeration>>
@@ -54,26 +81,27 @@ classDiagram
     Thread ..|> Runnable
 ````
 
-|                              | 说明                                                         |
-| ---------------------------: | :----------------------------------------------------------- |
-|         `setName`、`getName` | 设置/获取线程名称                                            |
-| `setPriority`、`getPriority` | 设置/获取线程优先级                                          |
-|                      `getId` | 获取线程ID                                                   |
-|                   `getState` | 获取线程状态                                                 |
-|      `setDaemon`、`isDaemon` | 守护线程                                                     |
-| `interrupt`、`isInterrupted` | 设置/获取中断信号                                            |
-|                    `isAlive` | 线程是否在运行                                               |
-|                      `start` | 启动线程                                                     |
-|                       `stop` | 中断线程（弃用）                                             |
-|                        `run` | <span style="color:red">直接调用方法而不是启动线程</span>    |
-|                              |                                                              |
-|                      `sleep` | 让出CPU（不考虑优先级），不释放锁，进入TIMED_WAITING         |
-|                      `yield` | 让出CPU（让与同级或更高级），不释放锁，进入READY<br>低优先级线程很可能长期无法执行 |
-|                       `join` | 让出CPU，释放管程和锁，当前线程进入BLOCKED<br>直到指定的线程运行结束后再执行本线程 |
-|                              |                                                              |
-|                       `wait` | 让出CPU，释放管程和锁，进入WAITING                           |
-|                     `notify` | 随机唤醒对象的等待池中的一个线程                             |
-|                  `notifyAll` | 唤醒对象的等待池中的所有线程                                 |
+|             Thread的成员方法 | 说明                                                      |
+| ---------------------------: | :-------------------------------------------------------- |
+|         `setName`、`getName` | 设置/获取线程名称                                         |
+| `setPriority`、`getPriority` | 设置/获取线程优先级                                       |
+|                      `getId` | 获取线程ID                                                |
+|                   `getState` | 获取线程状态                                              |
+|      `setDaemon`、`isDaemon` | 守护线程                                                  |
+| `interrupt`、`isInterrupted` | 设置/获取中断信号                                         |
+|                    `isAlive` | 线程是否在运行                                            |
+|                      `start` | 启动线程                                                  |
+|                       `stop` | 停止线程（弃用）                                          |
+|                        `run` | <span style="color:red">直接调用方法而不是启动线程</span> |
+
+| 多线程控制 | 让出CPU                                                 | 释放锁                                                      | 当前线程进入阶段                                              | 说明                                                |
+| ---------: | :--------: | :--------: | :--------: | :--------- |
+|    `Thread.sleep` | √    | ×        | TIMED_WAITING | 等待指定时间 |
+|    `Thread.yield` | √ | × | RUNNABLE | 仅能让与同级或更高级 |
+|            `object.wait` | √ | √ | WAITING | 必须放在循环体和同步代码块中 |
+| `thread.join` | √ | √ | BLOCKED | 指定线程结束后再执行本线程 |
+|     `object.notify` | -  | -  | -  | 随机唤醒对象的等待池中的一个线程 |
+|  `object.notifyAll` | -      | -      | -      | 唤醒对象的等待池中的所有线程 |
 
 ### 多线程实现方法
 
@@ -135,7 +163,7 @@ public class Main {
 - 有序性：一个线程观察其他线程中的指令执行顺序，由于指令重排序，该观察结果一般杂乱无序
 
 |                 | 说明                                                         |
-| --------------: | ------------------------------------------------------------ |
+| --------------: | :----------------------------------------------------------- |
 |      `volatile` | 前变量在寄存器（工作内存）中的值是不确定的，需要从主存中读取。<br>仅能实现原始变量（`boolean`、 `short` 、`int` 、`long`）的修改可见性，不能保证原子性。<br>标记的变量不会被编译器优化。 |
 |  `synchronized` | 锁定当前变量，只有当前线程可以访问该变量，其他线程被阻塞住。<br/>可以保证变量的修改可见性和原子性。<br/>可能会造成线程的阻塞。 |
 |  `AtomicObject` | 多个线程同时对该变量的值进行更新时仅有一个成功，<br>未成功的线程继续尝试，直等到执行成功。 |
@@ -174,7 +202,7 @@ static class LockPlus {
 }
 ```
 
-### 线程同步
+#### 线程同步
 
 ```java
 public class Main {
@@ -233,17 +261,6 @@ public class Main {
 
 ### 线程池
 
-```java
-ExecutorService fixedThreadPool = Executors.newFixedThreadPool(2);
-ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
-ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
-//
-ExecutorService singleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor();
-ExecutorService workStealingPool = Executors.newWorkStealingPool();
-ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 10, 100, TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
-```
-
 |                                    | 说明                                                         |
 | ---------------------------------: | ------------------------------------------------------------ |
 |                  `FixedThreadPool` | 创建一个固定大小的线程池，可控制并发的线程数，超出的线程会在队列中等待。 |
@@ -254,3 +271,14 @@ ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 10, 100, TimeUnit.SECO
 |    `SingleThreadScheduledExecutor` | 创建一个单线程的可以执行延迟任务的线程池。                   |
 | `WorkStealingPoolWorkStealingPool` | 创建一个抢占式执行的线程池（任务执行顺序不确定）。           |
 |               `ThreadPoolExecutor` | 原始的创建线程池的方式                                       |
+
+```java
+ExecutorService fixedThreadPool = Executors.newFixedThreadPool(2);
+ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
+//
+ExecutorService singleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor();
+ExecutorService workStealingPool = Executors.newWorkStealingPool();
+ThreadPoolExecutor threadPool = new ThreadPoolExecutor(5, 10, 100, TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
+```
