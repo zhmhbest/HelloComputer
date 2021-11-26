@@ -114,6 +114,70 @@ public class Main {
 - 安全限制：反射技术要求程序必须在一个没有安全限制的环境中运行。
 - 内部暴露：反射允许代码执行一些在正常情况下不被允许的操作，破坏了抽象性。
 
+### 动态代理
+
+可以用于**加事务**、**加权限**、**加日志**。
+
+创建代理`Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler handle)`
+
+- `loader`：选择由哪个对象来生成代理对象的加载。
+- `interfaces`：代理对象的调用接口。
+- `handle`：实现了`InvocationHandler`的对象。
+
+实现`InvocationHandler`接口，重写`Object invoke(Object proxy, Method method, Object[] args) throws Throwable`方法。
+
+- `proxy`：代理的真实对象
+- `method`：所要调用的该对象的方法
+- `args`：调用该方法时传递的参数
+
+```java
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+public class Main {
+    interface Speaker {
+        void sayHello();
+        void makeSpeech(String s);
+        void sayBye();
+    }
+
+    static class User implements Speaker {
+        protected String name;
+        public User(String name) { this.name = name; }
+        @Override
+        public void sayHello() { System.out.printf("%s: Hello\n", this.name); }
+        @Override
+        public void makeSpeech(String s) { System.out.printf("%s: %s\n", this.name, s); }
+        @Override
+        public void sayBye() { System.out.printf("%s: Bye\n", this.name); }
+    }
+
+    static <T> T proxyJDK(Object obj, Class<T> cls) {
+        final ClassLoader L = Main.class.getClassLoader();
+        final Object R = Proxy.newProxyInstance(L, new Class[]{cls}, new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException {
+                final String name = method.getName();
+                System.out.printf("↓↓↓↓ Before %12s ↓↓↓↓\n", name);
+                Object ret = method.invoke(obj, args); // 实际调用
+                System.out.printf("↑↑↑↑ After  %12s ↑↑↑↑\n\n", name);
+                return ret;
+            }
+        });
+        return (T) R;
+    }
+
+    public static void main(String[] args) {
+        Speaker speaker = proxyJDK(new User("Peter"), Speaker.class);
+        speaker.sayHello();
+        speaker.makeSpeech("发言内容");
+        speaker.sayBye();
+    }
+}
+```
+
 ### 泛型
 
 #### 泛型通配符
