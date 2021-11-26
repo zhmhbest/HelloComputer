@@ -284,13 +284,19 @@ List<String> list2 = new ArrayList<>();
 |                                    `int indexOf(String str)` | 字串位置             |
 |                                     `char charAt(int index)` | 指定位置的字符       |
 |                                              `String trim()` | 删去两端空白         |
+|                                       `String toLowerCase()` | 转化为小写           |
+|                                       `String toUpperCase()` | 转化为大写           |
 |                 `String replace(char oldChar, char newChar)` | 字符串替换           |
 | `String substring(int beginIndex)`<br>`String substring(int beginIndex, int endIndex)` | 截取子字符串         |
 |                               `String[] split(String regex)` | 字符串分割           |
 |    `byte[] getBytes()`<br>`byte[] getBytes(Charset charset)` | 返回字节数组         |
 |                            `boolean equals(Object anObject)` | 两个字符串值是否相同 |
-|                                       `String toLowerCase()` | 转化为小写           |
-|                                       `String toUpperCase()` | 转化为大写           |
+|                                             `int hashCode()` | Hash值               |
+
+在Collection和Map中，Hash值能降低对象比较次数。
+
+- Hash值相等，对象不一定相等；
+- Hash值不同对象一定不相等。
 
 ### 取整
 
