@@ -128,5 +128,3 @@
 ### [查找](./DataStruct/index.html#查找)
 
 ### [内排序](./DataStruct/index.html#内排序)
-
-## [Java](./Java/index.html)

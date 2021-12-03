@@ -1,8 +1,4 @@
-package org.example;
-
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * 运行模板
@@ -17,10 +13,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(Math.round(-1.6));
-        System.out.println(Math.ceil(-1.5));
-        System.out.println(Math.floor(-1.5));
-
         Scanner scanner = new Scanner(System.in);
         int k = scanner.nextInt();
         int n = scanner.nextInt();
