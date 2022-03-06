@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://zhmhbest.gitee.io/hellomathematics/style/index.css">
-<script src="https://zhmhbest.gitee.io/hellomathematics/style/index.js"></script>
-
 # [数据库系统概论](../index.html)
 
 [TOC]
